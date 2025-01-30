@@ -1,0 +1,2 @@
+# MyRustApp
+Rust cli
