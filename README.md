@@ -4,16 +4,21 @@
 MyRustApp is a simple Rust-based web application that demonstrates a CI/CD pipeline for automated testing and deployment.
 
 ## How to Run
-1. **Run the application using Cargo:**
+   
    `cargo run`
    
    • Default route (/):
+
    Open http://localhost:3000/
+
    `Hello, Rust.`
 	
     • Greeting route (/greet/:name):
+
     Open http://localhost:3000/greet/Alice
+
     Expected JSON response:
+    
     `{ "message": "Hello, Alice!" }`
 
 ## Technology Used
