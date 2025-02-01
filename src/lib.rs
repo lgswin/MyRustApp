@@ -21,3 +21,7 @@ pub fn greet(name: &str) -> Greeting {
         message: format!("Hello, {}!", name),
     }
 }
+
+pub async fn root_handler() -> &'static str {
+    "Hello, Rust."
+}

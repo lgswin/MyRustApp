@@ -4,11 +4,13 @@ use tokio;
 use std::net::SocketAddr;
 
 mod lib;
-use lib::{greet, Greeting};
+use lib::{greet, Greeting, root_handler};
 
 #[tokio::main]
 async fn main() {
-    let app = Router::new().route("/greet/:name", get(greet_handler));
+    let app = Router::new()
+        .route("/", get(root_handler)) // Default route
+        .route("/greet/:name", get(greet_handler));
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
     println!("Server running on {}", addr);
@@ -19,6 +21,7 @@ async fn main() {
         .unwrap();
 }
 
+// Greeting handler for "/greet/:name"
 async fn greet_handler(Path(name): Path<String>) -> Json<Greeting> {
     Json(greet(&name))
 }

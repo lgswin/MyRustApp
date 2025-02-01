@@ -12,3 +12,7 @@ path = "src/main.rs"
 axum = "0.6"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]  # Add these for testing
+tower = "0.4"
+hyper = { version = "0.14", features = ["full"] }
