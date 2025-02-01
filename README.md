@@ -11,8 +11,6 @@ The following technologies are used in this project:
 - **Actix Web**: Web framework for building the HTTP server.
 - **GitHub Actions**: Used for Continuous Integration (CI) and automated testing.
 - **Docker**: Containerization for deployment.
-- **AWS EC2 / S3 (Optional)**: Deployment environment.
-- **Terraform (Optional)**: Infrastructure as Code (IaC) for provisioning cloud resources.
 
 ---
 
@@ -30,11 +28,7 @@ The following technologies are used in this project:
 ### 3. **CI/CD Pipeline Implementation**
 - Configure **GitHub Actions** to automate testing and deployment.
 - Write a **Dockerfile** to containerize the application.
-- Define a **CI workflow** in `.github/workflows/ci.yml`.
-
-### 4. **Infrastructure Setup (Optional)**
-- Use Terraform to provision an EC2 instance on AWS.
-- Set up a deployment strategy using GitHub Actions to deploy to AWS.
+- Define a **CI workflow** in `.github/workflows/rust.yml`.
 
 ---
 
@@ -48,15 +42,35 @@ The following technologies are used in this project:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
+    # Install Rust (if not available)
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
 
-      - name: Build project
-        run: cargo build --verbose
+    # Run Cargo Build & Test before Dockerizing
+    - name: Build Rust Application
+      run: cargo build --verbose
+
+    - name: Run Rust Tests
+      run: cargo test --verbose
+
+    # Build Docker Image
+    - name: Build Docker Image
+      run: docker build -t my_rust_app .
+
+    # Run Container to Verify It Works
+    - name: Run Docker Container
+      run: docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
+
+    # Check if the container is running properly
+    - name: Check Running Container Logs
+      run: docker logs rust_container
+
+    # Stop the container
+    - name: Stop Container
+      run: docker stop rust_container
+```
