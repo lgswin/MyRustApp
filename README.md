@@ -7,19 +7,15 @@ MyRustApp is a simple Rust-based web application that demonstrates a CI/CD pipel
    
    `cargo run`
    
-   • Default route (/):
+   - Default route (/):
 
-   Open http://localhost:3000/
-
-   `Hello, Rust.`
+     Open http://localhost:3000/  > Hello, Rust.
 	
-    • Greeting route (/greet/:name):
+   - Greeting route (/greet/:name):
 
-    Open http://localhost:3000/greet/Alice
+     Open http://localhost:3000/greet/Alice
 
-    Expected JSON response:
-    
-    `{ "message": "Hello, Alice!" }`
+     Expected JSON response: > { "message": "Hello, Alice!" }
 
 ## Technology Used
 The following technologies are used in this project:
