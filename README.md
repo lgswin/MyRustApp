@@ -17,6 +17,10 @@ MyRustApp is a simple Rust-based web application that demonstrates a CI/CD pipel
 
      Expected JSON response: > { "message": "Hello, Alice!" }
 
+## Unit tests
+   
+   `cargo test`
+
 ## Technology Used
 The following technologies are used in this project:
 
