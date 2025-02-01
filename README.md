@@ -52,9 +52,9 @@ The following technologies are used in this project:
 
 ## How Each CI Stage is Implemented
 
-### **1. Build Stage**
-- Ensures that the Rust application compiles correctly.
+- Ensures that the Rust application compiles correctly by cargo build and cargo test.
 - Uses GitHub Actions to install dependencies and build the application.
+- The workflow steps are identical to those defined in rust.yml.
 
 ```yaml
 jobs:
