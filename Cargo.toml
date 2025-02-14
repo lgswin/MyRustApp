@@ -14,5 +14,7 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
 [dev-dependencies]  # Add these for testing
-tower = "0.4"
-hyper = { version = "0.14", features = ["full"] }
+tokio = { version = "1", features = ["full"] }
+tower = { version = "0.4", features = ["util"] } # Enables `ServiceExt`
+axum = "0.6" # Use the correct Axum version for compatibility
+hyper = "0.14" # Required for testing with HTTP requests

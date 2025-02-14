@@ -1,47 +1,58 @@
 #[cfg(test)]
 mod tests {
-    use my_rust_app::{greet, root_handler};
-    use axum::{Router, routing::get};
-    use tower::ServiceExt; // For `oneshot()`
-    use hyper::{Request, Body, StatusCode};
+    use actix_web::{test, App, web, http::StatusCode};
+    use serde_json::json;
+    use crate::{create_user, get_user, AppState, User};
+    use std::sync::Mutex;
+    use std::collections::HashMap;
 
-    #[tokio::test]
-    async fn test_greet() {
-        let greeting = greet("Alice");
-        assert_eq!(greeting.message, "Hello, Alice!");
+    #[actix_rt::test]
+    async fn test_create_user() {
+        let state = web::Data::new(AppState {
+            users: Mutex::new(HashMap::new()),
+        });
+
+        let app = test::init_service(
+            App::new()
+                .app_data(state.clone())
+                .route("/user", web::post().to(create_user)),
+        )
+        .await;
+
+        let req = test::TestRequest::post()
+            .uri("/user")
+            .set_json(&json!({ "id": 1, "name": "Alice", "email": "alice@example.com" }))
+            .to_request();
+
+        let resp = test::call_service(&app, req).await;
+        assert_eq!(resp.status(), StatusCode::CREATED);
     }
 
-    #[tokio::test]
-    async fn test_greet_empty() {
-        let greeting = greet("");
-        assert_eq!(greeting.message, "Hello, !");
-    }
+    #[actix_rt::test]
+    async fn test_get_user() {
+        let state = web::Data::new(AppState {
+            users: Mutex::new(HashMap::new()),
+        });
 
-    #[tokio::test]
-    async fn test_greet_special_chars() {
-        let greeting = greet("@User123");
-        assert_eq!(greeting.message, "Hello, @User123!");
-    }
+        // Insert test user
+        state.users.lock().unwrap().insert(
+            1,
+            User {
+                id: 1,
+                name: "Alice".to_string(),
+                email: "alice@example.com".to_string(),
+            },
+        );
 
-    #[tokio::test]
-    async fn test_default_route() {
-        // Create an instance of the app
-        let app = Router::new().route("/", get(root_handler));
+        let app = test::init_service(
+            App::new()
+                .app_data(state.clone())
+                .route("/user/{id}", web::get().to(get_user)),
+        )
+        .await;
 
-        // Create a request to "/"
-        let response = app
-            .oneshot(Request::builder().uri("/").body(Body::empty()).unwrap())
-            .await
-            .unwrap();
-
-        // Check that the response status is 200 OK
-        assert_eq!(response.status(), StatusCode::OK);
-
-        // Convert the response body to a string
-        let body = hyper::body::to_bytes(response.into_body()).await.unwrap();
-        let body_str = std::str::from_utf8(&body).unwrap();
-
-        // Ensure the response body is "Hello, Rust."
-        assert_eq!(body_str, "Hello, Rust.");
+        let req = test::TestRequest::get().uri("/user/1").to_request();
+        let resp = test::call_service(&app, req).await;
+        assert_eq!(resp.status(), StatusCode::OK);
     }
 }
