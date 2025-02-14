@@ -17,29 +17,26 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    # Install Rust (if not available)
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
 
-    # Run Cargo Build & Test before Dockerizing
     - name: Build Rust Application
-      run: cargo build --verbose
+      run: cargo build --release
 
     - name: Run Rust Tests
       run: cargo test --verbose
 
-    # Build Docker Image
     - name: Build Docker Image
       run: docker build -t my_rust_app .
 
-    # Run Container to Verify It Works
     - name: Run Docker Container
       run: docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
 
-    # Check if the container is running properly
-    - name: Check Running Container Logs
-      run: docker logs rust_container
+    - name: Test API Endpoints
+      run: |
+        sleep 5  # Wait for the server to start
+        curl -X POST "http://localhost:3000/user" -H "Content-Type: application/json" -d '{"id":1, "name":"Alice", "email":"alice@example.com"}'
+        curl -X GET "http://localhost:3000/user/1"
 
-    # Stop the container
     - name: Stop Container
       run: docker stop rust_container

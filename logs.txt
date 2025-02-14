@@ -1,0 +1,1075 @@
+2025-02-01T03:34:27.0295813Z Current runner version: '2.322.0'
+2025-02-01T03:34:27.0329295Z ##[group]Operating System
+2025-02-01T03:34:27.0330495Z Ubuntu
+2025-02-01T03:34:27.0331365Z 24.04.1
+2025-02-01T03:34:27.0332402Z LTS
+2025-02-01T03:34:27.0333217Z ##[endgroup]
+2025-02-01T03:34:27.0334149Z ##[group]Runner Image
+2025-02-01T03:34:27.0335333Z Image: ubuntu-24.04
+2025-02-01T03:34:27.0336237Z Version: 20250126.1.0
+2025-02-01T03:34:27.0338437Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250126.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-01T03:34:27.0341147Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250126.1
+2025-02-01T03:34:27.0342749Z ##[endgroup]
+2025-02-01T03:34:27.0343639Z ##[group]Runner Image Provisioner
+2025-02-01T03:34:27.0344818Z 2.0.422.1
+2025-02-01T03:34:27.0345597Z ##[endgroup]
+2025-02-01T03:34:27.0347802Z ##[group]GITHUB_TOKEN Permissions
+2025-02-01T03:34:27.0350512Z Contents: read
+2025-02-01T03:34:27.0351393Z Metadata: read
+2025-02-01T03:34:27.0352607Z Packages: read
+2025-02-01T03:34:27.0353635Z ##[endgroup]
+2025-02-01T03:34:27.0358181Z Secret source: Actions
+2025-02-01T03:34:27.0359543Z Prepare workflow directory
+2025-02-01T03:34:27.0861248Z Prepare all required actions
+2025-02-01T03:34:27.0897540Z Getting action download info
+2025-02-01T03:34:27.2658721Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-01T03:34:27.3857136Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:38b70195107dddab2c7bbd522bcf763bac00963b)
+2025-02-01T03:34:27.7643875Z Complete job name: build
+2025-02-01T03:34:27.8367530Z ##[group]Run actions/checkout@v4
+2025-02-01T03:34:27.8368405Z with:
+2025-02-01T03:34:27.8368882Z   repository: aagamjhaveri/prog8860-w25-cicd
+2025-02-01T03:34:27.8369572Z   token: ***
+2025-02-01T03:34:27.8369936Z   ssh-strict: true
+2025-02-01T03:34:27.8370322Z   ssh-user: git
+2025-02-01T03:34:27.8370715Z   persist-credentials: true
+2025-02-01T03:34:27.8371153Z   clean: true
+2025-02-01T03:34:27.8371560Z   sparse-checkout-cone-mode: true
+2025-02-01T03:34:27.8372034Z   fetch-depth: 1
+2025-02-01T03:34:27.8372407Z   fetch-tags: false
+2025-02-01T03:34:27.8372805Z   show-progress: true
+2025-02-01T03:34:27.8373204Z   lfs: false
+2025-02-01T03:34:27.8373556Z   submodules: false
+2025-02-01T03:34:27.8373949Z   set-safe-directory: true
+2025-02-01T03:34:27.8374576Z env:
+2025-02-01T03:34:27.8374946Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:27.8375369Z ##[endgroup]
+2025-02-01T03:34:28.0419669Z Syncing repository: aagamjhaveri/prog8860-w25-cicd
+2025-02-01T03:34:28.0422088Z ##[group]Getting Git version info
+2025-02-01T03:34:28.0423305Z Working directory is '/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd'
+2025-02-01T03:34:28.0425099Z [command]/usr/bin/git version
+2025-02-01T03:34:28.1281324Z git version 2.48.1
+2025-02-01T03:34:28.1284025Z ##[endgroup]
+2025-02-01T03:34:28.1290167Z Temporarily overriding HOME='/home/runner/work/_temp/d95f9ec6-f7eb-43aa-acb7-c63429d2a2bd' before making global git config changes
+2025-02-01T03:34:28.1292517Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-01T03:34:28.1294343Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd
+2025-02-01T03:34:28.1297767Z Deleting the contents of '/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd'
+2025-02-01T03:34:28.1299659Z ##[group]Initializing the repository
+2025-02-01T03:34:28.1300895Z [command]/usr/bin/git init /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd
+2025-02-01T03:34:28.1302495Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-01T03:34:28.1304001Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-01T03:34:28.1305458Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-01T03:34:28.1306662Z hint:
+2025-02-01T03:34:28.1307680Z hint: 	git config --global init.defaultBranch <name>
+2025-02-01T03:34:28.1308679Z hint:
+2025-02-01T03:34:28.1310065Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-01T03:34:28.1312455Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-01T03:34:28.1313794Z hint:
+2025-02-01T03:34:28.1314465Z hint: 	git branch -m <name>
+2025-02-01T03:34:28.1315838Z Initialized empty Git repository in /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/.git/
+2025-02-01T03:34:28.1319467Z [command]/usr/bin/git remote add origin https://github.com/aagamjhaveri/prog8860-w25-cicd
+2025-02-01T03:34:28.1322383Z ##[endgroup]
+2025-02-01T03:34:28.1323623Z ##[group]Disabling automatic garbage collection
+2025-02-01T03:34:28.1324691Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-01T03:34:28.1326837Z ##[endgroup]
+2025-02-01T03:34:28.1328158Z ##[group]Setting up auth
+2025-02-01T03:34:28.1329261Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-01T03:34:28.1332858Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-01T03:34:28.1411873Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-01T03:34:28.1416020Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-01T03:34:28.1650672Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-01T03:34:28.1698077Z ##[endgroup]
+2025-02-01T03:34:28.1707781Z ##[group]Fetching the repository
+2025-02-01T03:34:28.1711192Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b749ceab2df85ddc3510947a84a15c024c50237e:refs/remotes/pull/52/merge
+2025-02-01T03:34:28.5756226Z From https://github.com/aagamjhaveri/prog8860-w25-cicd
+2025-02-01T03:34:28.5757780Z  * [new ref]         b749ceab2df85ddc3510947a84a15c024c50237e -> pull/52/merge
+2025-02-01T03:34:28.5760339Z ##[endgroup]
+2025-02-01T03:34:28.5761474Z ##[group]Determining the checkout info
+2025-02-01T03:34:28.5762750Z ##[endgroup]
+2025-02-01T03:34:28.5763452Z [command]/usr/bin/git sparse-checkout disable
+2025-02-01T03:34:28.5791948Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-01T03:34:28.5828421Z ##[group]Checking out the ref
+2025-02-01T03:34:28.5832215Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/52/merge
+2025-02-01T03:34:28.5878829Z Note: switching to 'refs/remotes/pull/52/merge'.
+2025-02-01T03:34:28.5881187Z 
+2025-02-01T03:34:28.5881818Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-01T03:34:28.5883362Z changes and commit them, and you can discard any commits you make in this
+2025-02-01T03:34:28.5884997Z state without impacting any branches by switching back to a branch.
+2025-02-01T03:34:28.5886284Z 
+2025-02-01T03:34:28.5887125Z If you want to create a new branch to retain commits you create, you may
+2025-02-01T03:34:28.5888581Z do so (now or later) by using -c with the switch command. Example:
+2025-02-01T03:34:28.5889394Z 
+2025-02-01T03:34:28.5889732Z   git switch -c <new-branch-name>
+2025-02-01T03:34:28.5890290Z 
+2025-02-01T03:34:28.5890623Z Or undo this operation with:
+2025-02-01T03:34:28.5892239Z 
+2025-02-01T03:34:28.5892672Z   git switch -
+2025-02-01T03:34:28.5893136Z 
+2025-02-01T03:34:28.5893834Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-01T03:34:28.5894806Z 
+2025-02-01T03:34:28.5895865Z HEAD is now at b749cea Merge 609054df937de47f71a78f9144881b61a708ad95 into ae7876599bbe365c1b364e462f9b7b5f57cac36d
+2025-02-01T03:34:28.5900015Z ##[endgroup]
+2025-02-01T03:34:28.5928254Z [command]/usr/bin/git log -1 --format=%H
+2025-02-01T03:34:28.5952968Z b749ceab2df85ddc3510947a84a15c024c50237e
+2025-02-01T03:34:28.6411846Z ##[group]Run dtolnay/rust-toolchain@stable
+2025-02-01T03:34:28.6412646Z with:
+2025-02-01T03:34:28.6413004Z   toolchain: stable
+2025-02-01T03:34:28.6413374Z env:
+2025-02-01T03:34:28.6413714Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:28.6414141Z ##[endgroup]
+2025-02-01T03:34:28.6585911Z ##[group]Run : parse toolchain version
+2025-02-01T03:34:28.6587322Z [36;1m: parse toolchain version[0m
+2025-02-01T03:34:28.6588671Z [36;1mif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2025-02-01T03:34:28.6590081Z [36;1m  if [[ Linux == macOS ]]; then[0m
+2025-02-01T03:34:28.6591837Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6593668Z [36;1m  else[0m
+2025-02-01T03:34:28.6595096Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6596776Z [36;1m  fi[0m
+2025-02-01T03:34:28.6598096Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2025-02-01T03:34:28.6600001Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6601665Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2025-02-01T03:34:28.6603508Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6605255Z [36;1melse[0m
+2025-02-01T03:34:28.6606131Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6607493Z [36;1mfi[0m
+2025-02-01T03:34:28.6655775Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:28.6657231Z env:
+2025-02-01T03:34:28.6657922Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:28.6658714Z   toolchain: stable
+2025-02-01T03:34:28.6659442Z ##[endgroup]
+2025-02-01T03:34:28.6829243Z ##[group]Run : construct rustup command line
+2025-02-01T03:34:28.6829853Z [36;1m: construct rustup command line[0m
+2025-02-01T03:34:28.6830704Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6831889Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6832796Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:28.6861752Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:28.6862385Z env:
+2025-02-01T03:34:28.6862730Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:28.6863158Z   targets: 
+2025-02-01T03:34:28.6863495Z   components: 
+2025-02-01T03:34:28.6863858Z ##[endgroup]
+2025-02-01T03:34:28.6955431Z ##[group]Run : set $CARGO_HOME
+2025-02-01T03:34:28.6955916Z [36;1m: set $CARGO_HOME[0m
+2025-02-01T03:34:28.6956502Z [36;1mecho CARGO_HOME=${CARGO_HOME:-$HOME/.cargo} >> $GITHUB_ENV[0m
+2025-02-01T03:34:28.6982907Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:28.6983554Z env:
+2025-02-01T03:34:28.6983933Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:28.6984355Z ##[endgroup]
+2025-02-01T03:34:28.7085593Z ##[group]Run : install rustup if needed
+2025-02-01T03:34:28.7086141Z [36;1m: install rustup if needed[0m
+2025-02-01T03:34:28.7086679Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2025-02-01T03:34:28.7088364Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail "https://sh.rustup.rs" | sh -s -- --default-toolchain none -y[0m
+2025-02-01T03:34:28.7089693Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2025-02-01T03:34:28.7090224Z [36;1mfi[0m
+2025-02-01T03:34:28.7116077Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:28.7116713Z env:
+2025-02-01T03:34:28.7117281Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:28.7117733Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:28.7118190Z ##[endgroup]
+2025-02-01T03:34:28.7200465Z ##[group]Run rustup toolchain install stable --profile minimal --no-self-update
+2025-02-01T03:34:28.7201612Z [36;1mrustup toolchain install stable --profile minimal --no-self-update[0m
+2025-02-01T03:34:28.7227909Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:28.7228540Z env:
+2025-02-01T03:34:28.7228880Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:28.7229315Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:28.7229778Z ##[endgroup]
+2025-02-01T03:34:29.5356553Z info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+2025-02-01T03:34:29.7658718Z info: latest update on 2025-01-30, rust version 1.84.1 (e71f9a9a9 2025-01-27)
+2025-02-01T03:34:29.7881953Z info: downloading component 'clippy'
+2025-02-01T03:34:29.8486903Z info: downloading component 'rustfmt'
+2025-02-01T03:34:29.9013532Z info: downloading component 'cargo'
+2025-02-01T03:34:30.0333876Z info: downloading component 'rust-std'
+2025-02-01T03:34:30.4069999Z info: downloading component 'rustc'
+2025-02-01T03:34:30.9192259Z info: removing previous version of component 'clippy'
+2025-02-01T03:34:30.9208763Z info: removing previous version of component 'rustfmt'
+2025-02-01T03:34:30.9474853Z info: removing previous version of component 'cargo'
+2025-02-01T03:34:30.9505684Z info: removing previous version of component 'rust-std'
+2025-02-01T03:34:30.9531464Z info: removing previous version of component 'rustc'
+2025-02-01T03:34:30.9576324Z info: installing component 'clippy'
+2025-02-01T03:34:31.2308216Z info: installing component 'rustfmt'
+2025-02-01T03:34:31.4742919Z info: installing component 'cargo'
+2025-02-01T03:34:32.0668265Z info: installing component 'rust-std'
+2025-02-01T03:34:33.9146600Z info: installing component 'rustc'
+2025-02-01T03:34:38.0843750Z 
+2025-02-01T03:34:38.0950318Z   stable-x86_64-unknown-linux-gnu updated - rustc 1.84.1 (e71f9a9a9 2025-01-27) (from rustc 1.84.0 (9fc6b4312 2025-01-07))
+2025-02-01T03:34:38.0965630Z 
+2025-02-01T03:34:38.1012774Z ##[group]Run rustup default stable
+2025-02-01T03:34:38.1013058Z [36;1mrustup default stable[0m
+2025-02-01T03:34:38.1042052Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.1042401Z env:
+2025-02-01T03:34:38.1042576Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.1042795Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.1043020Z ##[endgroup]
+2025-02-01T03:34:38.1123423Z info: using existing install for 'stable-x86_64-unknown-linux-gnu'
+2025-02-01T03:34:38.1132850Z info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+2025-02-01T03:34:38.1136028Z 
+2025-02-01T03:34:38.1221925Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.84.1 (e71f9a9a9 2025-01-27)
+2025-02-01T03:34:38.1223573Z 
+2025-02-01T03:34:38.1257683Z ##[group]Run : create cachekey
+2025-02-01T03:34:38.1258052Z [36;1m: create cachekey[0m
+2025-02-01T03:34:38.1258537Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2025-02-01T03:34:38.1259140Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2025-02-01T03:34:38.1259619Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2025-02-01T03:34:38.1287923Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.1288249Z env:
+2025-02-01T03:34:38.1288429Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.1288654Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.1288874Z ##[endgroup]
+2025-02-01T03:34:38.1885021Z ##[group]Run : disable incremental compilation
+2025-02-01T03:34:38.1885349Z [36;1m: disable incremental compilation[0m
+2025-02-01T03:34:38.1885649Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2025-02-01T03:34:38.1885945Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2025-02-01T03:34:38.1886191Z [36;1mfi[0m
+2025-02-01T03:34:38.1915860Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.1916180Z env:
+2025-02-01T03:34:38.1916357Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.1916818Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.1917254Z ##[endgroup]
+2025-02-01T03:34:38.2020168Z ##[group]Run : enable colors in Cargo output
+2025-02-01T03:34:38.2020475Z [36;1m: enable colors in Cargo output[0m
+2025-02-01T03:34:38.2020778Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2025-02-01T03:34:38.2021087Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2025-02-01T03:34:38.2021339Z [36;1mfi[0m
+2025-02-01T03:34:38.2047339Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.2047658Z env:
+2025-02-01T03:34:38.2047838Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.2048053Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.2048281Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:34:38.2048472Z ##[endgroup]
+2025-02-01T03:34:38.2120499Z ##[group]Run : enable Cargo sparse registry
+2025-02-01T03:34:38.2120807Z [36;1m: enable Cargo sparse registry[0m
+2025-02-01T03:34:38.2121141Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2025-02-01T03:34:38.2121782Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2025-02-01T03:34:38.2122457Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2025-02-01T03:34:38.2122964Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-02-01T03:34:38.2123443Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2025-02-01T03:34:38.2123885Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2025-02-01T03:34:38.2124386Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2025-02-01T03:34:38.2124849Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2025-02-01T03:34:38.2125157Z [36;1m  fi[0m
+2025-02-01T03:34:38.2125326Z [36;1mfi[0m
+2025-02-01T03:34:38.2152209Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.2152518Z env:
+2025-02-01T03:34:38.2152698Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.2152913Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.2153144Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:34:38.2153339Z ##[endgroup]
+2025-02-01T03:34:38.2484446Z ##[group]Run : work around spurious network errors in curl 8.0
+2025-02-01T03:34:38.2484849Z [36;1m: work around spurious network errors in curl 8.0[0m
+2025-02-01T03:34:38.2485378Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2025-02-01T03:34:38.2485965Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2025-02-01T03:34:38.2486381Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2025-02-01T03:34:38.2486658Z [36;1mfi[0m
+2025-02-01T03:34:38.2516571Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.2516883Z env:
+2025-02-01T03:34:38.2517330Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.2517569Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.2517815Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:34:38.2518010Z ##[endgroup]
+2025-02-01T03:34:38.2718597Z ##[group]Run rustc +stable --version --verbose
+2025-02-01T03:34:38.2718911Z [36;1mrustc +stable --version --verbose[0m
+2025-02-01T03:34:38.2747792Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-01T03:34:38.2748109Z env:
+2025-02-01T03:34:38.2748282Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.2748495Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.2748724Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:34:38.2748923Z ##[endgroup]
+2025-02-01T03:34:38.2901090Z rustc 1.84.1 (e71f9a9a9 2025-01-27)
+2025-02-01T03:34:38.2902881Z binary: rustc
+2025-02-01T03:34:38.2903296Z commit-hash: e71f9a9a98b0faf423844bf0ba7438f29dc27d58
+2025-02-01T03:34:38.2903795Z commit-date: 2025-01-27
+2025-02-01T03:34:38.2904193Z host: x86_64-unknown-linux-gnu
+2025-02-01T03:34:38.2904556Z release: 1.84.1
+2025-02-01T03:34:38.2904864Z LLVM version: 19.1.5
+2025-02-01T03:34:38.2978113Z ##[group]Run cargo build --verbose
+2025-02-01T03:34:38.2978588Z [36;1mcargo build --verbose[0m
+2025-02-01T03:34:38.3008394Z shell: /usr/bin/bash -e {0}
+2025-02-01T03:34:38.3008622Z env:
+2025-02-01T03:34:38.3008796Z   CARGO_TERM_COLOR: always
+2025-02-01T03:34:38.3009028Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:34:38.3009252Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:34:38.3009450Z ##[endgroup]
+2025-02-01T03:34:38.3897903Z [1m[32m    Updating[0m crates.io index
+2025-02-01T03:34:38.8823259Z [1m[32m Downloading[0m crates ...
+2025-02-01T03:34:39.0505941Z [1m[32m  Downloaded[0m futures-sink v0.3.31
+2025-02-01T03:34:39.0506517Z [1m[32m  Downloaded[0m axum-core v0.3.4
+2025-02-01T03:34:39.0618885Z [1m[32m  Downloaded[0m cfg-if v1.0.0
+2025-02-01T03:34:39.0619476Z [1m[32m  Downloaded[0m try-lock v0.2.5
+2025-02-01T03:34:39.0667506Z [1m[32m  Downloaded[0m sync_wrapper v0.1.2
+2025-02-01T03:34:39.0684358Z [1m[32m  Downloaded[0m tower-service v0.3.3
+2025-02-01T03:34:39.0735652Z [1m[32m  Downloaded[0m want v0.3.1
+2025-02-01T03:34:39.0774750Z [1m[32m  Downloaded[0m form_urlencoded v1.2.1
+2025-02-01T03:34:39.0816416Z [1m[32m  Downloaded[0m tower-layer v0.3.3
+2025-02-01T03:34:39.0887442Z [1m[32m  Downloaded[0m slab v0.4.9
+2025-02-01T03:34:39.0919852Z [1m[32m  Downloaded[0m smallvec v1.13.2
+2025-02-01T03:34:39.0967788Z [1m[32m  Downloaded[0m tracing-core v0.1.33
+2025-02-01T03:34:39.0994804Z [1m[32m  Downloaded[0m tower v0.4.13
+2025-02-01T03:34:39.1119804Z [1m[32m  Downloaded[0m serde_json v1.0.138
+2025-02-01T03:34:39.1212982Z [1m[32m  Downloaded[0m syn v2.0.96
+2025-02-01T03:34:39.1347689Z [1m[32m  Downloaded[0m tokio-macros v2.5.0
+2025-02-01T03:34:39.1361381Z [1m[32m  Downloaded[0m once_cell v1.20.2
+2025-02-01T03:34:39.1394377Z [1m[32m  Downloaded[0m tokio v1.43.0
+2025-02-01T03:34:39.1880125Z [1m[32m  Downloaded[0m unicode-ident v1.0.16
+2025-02-01T03:34:39.1909353Z [1m[32m  Downloaded[0m proc-macro2 v1.0.93
+2025-02-01T03:34:39.1940011Z [1m[32m  Downloaded[0m pin-project-internal v1.1.8
+2025-02-01T03:34:39.1958550Z [1m[32m  Downloaded[0m serde v1.0.217
+2025-02-01T03:34:39.1994544Z [1m[32m  Downloaded[0m socket2 v0.5.8
+2025-02-01T03:34:39.2015911Z [1m[32m  Downloaded[0m matchit v0.7.3
+2025-02-01T03:34:39.2037522Z [1m[32m  Downloaded[0m hashbrown v0.15.2
+2025-02-01T03:34:39.2114649Z [1m[32m  Downloaded[0m ryu v1.0.19
+2025-02-01T03:34:39.2153583Z [1m[32m  Downloaded[0m futures-channel v0.3.31
+2025-02-01T03:34:39.2179995Z [1m[32m  Downloaded[0m log v0.4.25
+2025-02-01T03:34:39.2215842Z [1m[32m  Downloaded[0m libc v0.2.169
+2025-02-01T03:34:39.2669209Z [1m[32m  Downloaded[0m http-body v0.4.6
+2025-02-01T03:34:39.2687135Z [1m[32m  Downloaded[0m rustversion v1.0.19
+2025-02-01T03:34:39.2715969Z [1m[32m  Downloaded[0m parking_lot v0.12.3
+2025-02-01T03:34:39.2741350Z [1m[32m  Downloaded[0m futures-core v0.3.31
+2025-02-01T03:34:39.2755180Z [1m[32m  Downloaded[0m scopeguard v1.2.0
+2025-02-01T03:34:39.2767929Z [1m[32m  Downloaded[0m pin-project v1.1.8
+2025-02-01T03:34:39.2917600Z [1m[32m  Downloaded[0m hyper v0.14.32
+2025-02-01T03:34:39.3052912Z [1m[32m  Downloaded[0m httpdate v1.0.3
+2025-02-01T03:34:39.3059503Z [1m[32m  Downloaded[0m h2 v0.3.26
+2025-02-01T03:34:39.3173687Z [1m[32m  Downloaded[0m axum v0.6.20
+2025-02-01T03:34:39.3304416Z [1m[32m  Downloaded[0m tokio-util v0.7.13
+2025-02-01T03:34:39.3422915Z [1m[32m  Downloaded[0m quote v1.0.38
+2025-02-01T03:34:39.3461578Z [1m[32m  Downloaded[0m mio v1.0.3
+2025-02-01T03:34:39.3563367Z [1m[32m  Downloaded[0m memchr v2.7.4
+2025-02-01T03:34:39.3658077Z [1m[32m  Downloaded[0m indexmap v2.7.1
+2025-02-01T03:34:39.3722538Z [1m[32m  Downloaded[0m http v0.2.12
+2025-02-01T03:34:39.3782840Z [1m[32m  Downloaded[0m futures-util v0.3.31
+2025-02-01T03:34:39.4037630Z [1m[32m  Downloaded[0m futures-task v0.3.31
+2025-02-01T03:34:39.4038650Z [1m[32m  Downloaded[0m tracing v0.1.41
+2025-02-01T03:34:39.4088155Z [1m[32m  Downloaded[0m serde_derive v1.0.217
+2025-02-01T03:34:39.4130824Z [1m[32m  Downloaded[0m pin-project-lite v0.2.16
+2025-02-01T03:34:39.4227241Z [1m[32m  Downloaded[0m bytes v1.9.0
+2025-02-01T03:34:39.4292044Z [1m[32m  Downloaded[0m signal-hook-registry v1.4.2
+2025-02-01T03:34:39.4308823Z [1m[32m  Downloaded[0m httparse v1.10.0
+2025-02-01T03:34:39.4350679Z [1m[32m  Downloaded[0m bitflags v1.3.2
+2025-02-01T03:34:39.4403223Z [1m[32m  Downloaded[0m autocfg v1.4.0
+2025-02-01T03:34:39.4433428Z [1m[32m  Downloaded[0m async-trait v0.1.85
+2025-02-01T03:34:39.4518646Z [1m[32m  Downloaded[0m serde_urlencoded v0.7.1
+2025-02-01T03:34:39.4520045Z [1m[32m  Downloaded[0m pin-utils v0.1.0
+2025-02-01T03:34:39.4538157Z [1m[32m  Downloaded[0m percent-encoding v2.3.1
+2025-02-01T03:34:39.4549955Z [1m[32m  Downloaded[0m parking_lot_core v0.9.10
+2025-02-01T03:34:39.4584002Z [1m[32m  Downloaded[0m lock_api v0.4.12
+2025-02-01T03:34:39.4605724Z [1m[32m  Downloaded[0m itoa v1.0.14
+2025-02-01T03:34:39.4627699Z [1m[32m  Downloaded[0m serde_path_to_error v0.1.16
+2025-02-01T03:34:39.4656462Z [1m[32m  Downloaded[0m fnv v1.0.7
+2025-02-01T03:34:39.4666485Z [1m[32m  Downloaded[0m mime v0.3.17
+2025-02-01T03:34:39.4686833Z [1m[32m  Downloaded[0m equivalent v1.0.1
+2025-02-01T03:34:39.4995507Z [1m[32m   Compiling[0m proc-macro2 v1.0.93
+2025-02-01T03:34:39.4998003Z [1m[32m   Compiling[0m unicode-ident v1.0.16
+2025-02-01T03:34:39.5013721Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name unicode_ident --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/unicode-ident-1.0.16/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=486d4e32c5e3bc0e -C extra-filename=-486d4e32c5e3bc0e --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:39.5023801Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-1.0.93/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="proc-macro"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "nightly", "proc-macro", "span-locations"))' -C metadata=ab8d73d586b15643 -C extra-filename=-ab8d73d586b15643 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/proc-macro2-ab8d73d586b15643 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:39.5603086Z [1m[32m   Compiling[0m libc v0.2.169
+2025-02-01T03:34:39.5616886Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libc-0.2.169/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("align", "const-extern-fn", "default", "extra_traits", "rustc-dep-of-std", "rustc-std-workspace-core", "std", "use_std"))' -C metadata=b19ddf8e2d903ce4 -C extra-filename=-b19ddf8e2d903ce4 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/libc-b19ddf8e2d903ce4 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:39.7792546Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/proc-macro2-ab8d73d586b15643/build-script-build`
+2025-02-01T03:34:39.8515229Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name proc_macro2 --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro2-1.0.93/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="proc-macro"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "nightly", "proc-macro", "span-locations"))' -C metadata=aaf4092513e4f442 -C extra-filename=-aaf4092513e4f442 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern unicode_ident=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libunicode_ident-486d4e32c5e3bc0e.rmeta --cap-lints allow --cfg wrap_proc_macro --check-cfg 'cfg(fuzzing)' --check-cfg 'cfg(no_is_available)' --check-cfg 'cfg(no_literal_byte_character)' --check-cfg 'cfg(no_literal_c_string)' --check-cfg 'cfg(no_source_text)' --check-cfg 'cfg(proc_macro_span)' --check-cfg 'cfg(procmacro2_backtrace)' --check-cfg 'cfg(procmacro2_nightly_testing)' --check-cfg 'cfg(procmacro2_semver_exempt)' --check-cfg 'cfg(randomize_layout)' --check-cfg 'cfg(span_locations)' --check-cfg 'cfg(super_unstable)' --check-cfg 'cfg(wrap_proc_macro)'`
+2025-02-01T03:34:39.8580692Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/libc-b19ddf8e2d903ce4/build-script-build`
+2025-02-01T03:34:39.8770967Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name libc --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libc-0.2.169/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("align", "const-extern-fn", "default", "extra_traits", "rustc-dep-of-std", "rustc-std-workspace-core", "std", "use_std"))' -C metadata=b6e0b06e8aec560b -C extra-filename=-b6e0b06e8aec560b --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow --cfg freebsd11 --cfg libc_const_extern_fn --check-cfg 'cfg(emscripten_new_stat_abi)' --check-cfg 'cfg(espidf_time32)' --check-cfg 'cfg(freebsd10)' --check-cfg 'cfg(freebsd11)' --check-cfg 'cfg(freebsd12)' --check-cfg 'cfg(freebsd13)' --check-cfg 'cfg(freebsd14)' --check-cfg 'cfg(freebsd15)' --check-cfg 'cfg(libc_const_extern_fn)' --check-cfg 'cfg(libc_deny_warnings)' --check-cfg 'cfg(libc_thread_local)' --check-cfg 'cfg(libc_ctest)' --check-cfg 'cfg(target_os,values("switch","aix","ohos","hurd","rtems","visionos","nuttx"))' --check-cfg 'cfg(target_env,values("illumos","wasi","aix","ohos"))' --check-cfg 'cfg(target_arch,values("loongarch64","mips32r6","mips64r6","csky"))'`
+2025-02-01T03:34:40.4348996Z [1m[32m   Compiling[0m quote v1.0.38
+2025-02-01T03:34:40.4372652Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name quote --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/quote-1.0.38/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="proc-macro"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "proc-macro"))' -C metadata=bcb6df4d38097762 -C extra-filename=-bcb6df4d38097762 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libproc_macro2-aaf4092513e4f442.rmeta --cap-lints allow`
+2025-02-01T03:34:40.5366433Z [1m[32m   Compiling[0m pin-project-lite v0.2.16
+2025-02-01T03:34:40.5447363Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name pin_project_lite --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-lite-0.2.16/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs '--warn=clippy::undocumented_unsafe_blocks' '--warn=clippy::transmute_undefined_repr' '--warn=clippy::trailing_empty_array' --warn=single_use_lifetimes --warn=rust_2018_idioms '--warn=clippy::pedantic' --warn=non_ascii_idents '--warn=clippy::inline_asm_x86_att_syntax' --warn=improper_ctypes_definitions --warn=improper_ctypes --warn=deprecated_safe '--warn=clippy::default_union_representation' '--warn=clippy::as_underscore' '--warn=clippy::as_ptr_cast_mut' '--warn=clippy::all' '--allow=clippy::unreadable_literal' '--allow=clippy::type_complexity' '--allow=clippy::too_many_lines' '--allow=clippy::too_many_arguments' '--allow=clippy::struct_field_names' '--allow=clippy::struct_excessive_bools' '--allow=clippy::single_match_else' '--allow=clippy::single_match' '--allow=clippy::similar_names' '--allow=clippy::range_plus_one' '--allow=clippy::nonminimal_bool' '--allow=clippy::naive_bytecount' '--allow=clippy::module_name_repetitions' '--allow=clippy::missing_errors_doc' '--allow=clippy::manual_range_contains' '--allow=clippy::manual_assert' '--allow=clippy::lint_groups_priority' '--allow=clippy::incompatible_msrv' '--allow=clippy::float_cmp' '--allow=clippy::doc_markdown' '--allow=clippy::declare_interior_mutable_const' '--allow=clippy::cast_lossless' '--allow=clippy::borrow_as_ptr' '--allow=clippy::bool_assert_comparison' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=20a2dd7d64defeb1 -C extra-filename=-20a2dd7d64defeb1 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:40.5841333Z [1m[32m   Compiling[0m syn v2.0.96
+2025-02-01T03:34:40.5852982Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name syn --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/syn-2.0.96/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --cfg 'feature="clone-impls"' --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="full"' --cfg 'feature="parsing"' --cfg 'feature="printing"' --cfg 'feature="proc-macro"' --cfg 'feature="visit-mut"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("clone-impls", "default", "derive", "extra-traits", "fold", "full", "parsing", "printing", "proc-macro", "test", "visit", "visit-mut"))' -C metadata=713c6ba4feb4bce7 -C extra-filename=-713c6ba4feb4bce7 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libproc_macro2-aaf4092513e4f442.rmeta --extern quote=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libquote-bcb6df4d38097762.rmeta --extern unicode_ident=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libunicode_ident-486d4e32c5e3bc0e.rmeta --cap-lints allow`
+2025-02-01T03:34:40.6666137Z [1m[32m   Compiling[0m itoa v1.0.14
+2025-02-01T03:34:40.6678396Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name itoa --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/itoa-1.0.14/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("no-panic"))' -C metadata=e2c23b8eae4502dd -C extra-filename=-e2c23b8eae4502dd --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:40.7453265Z [1m[32m   Compiling[0m autocfg v1.4.0
+2025-02-01T03:34:40.7460267Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name autocfg --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/autocfg-1.4.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=acd24b9751bec413 -C extra-filename=-acd24b9751bec413 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:41.0755272Z [1m[32m   Compiling[0m rustversion v1.0.19
+2025-02-01T03:34:41.0761638Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustversion-1.0.19/build/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=6275b6a6004f7160 -C extra-filename=-6275b6a6004f7160 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/rustversion-6275b6a6004f7160 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:41.3662682Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/rustversion-6275b6a6004f7160/build-script-build`
+2025-02-01T03:34:41.3825525Z [1m[32m   Compiling[0m lock_api v0.4.12
+2025-02-01T03:34:41.3834274Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/lock_api-0.4.12/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="atomic_usize"' --cfg 'feature="default"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("arc_lock", "atomic_usize", "default", "nightly", "owning_ref", "serde"))' -C metadata=b91ab3cf616fbeaf -C extra-filename=-b91ab3cf616fbeaf --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/lock_api-b91ab3cf616fbeaf -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern autocfg=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libautocfg-acd24b9751bec413.rlib --cap-lints allow`
+2025-02-01T03:34:41.5511493Z [1m[32m   Compiling[0m parking_lot_core v0.9.10
+2025-02-01T03:34:41.5524253Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/parking_lot_core-0.9.10/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("backtrace", "deadlock_detection", "nightly", "petgraph", "thread-id"))' -C metadata=3b4d479d18255a8b -C extra-filename=-3b4d479d18255a8b --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/parking_lot_core-3b4d479d18255a8b -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:41.7434680Z [1m[32m   Compiling[0m bytes v1.9.0
+2025-02-01T03:34:41.7440441Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name bytes --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytes-1.9.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "serde", "std"))' -C metadata=a9d71a2f6464ddc6 -C extra-filename=-a9d71a2f6464ddc6 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:42.2779566Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/parking_lot_core-3b4d479d18255a8b/build-script-build`
+2025-02-01T03:34:42.2811259Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/lock_api-b91ab3cf616fbeaf/build-script-build`
+2025-02-01T03:34:42.3215836Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name rustversion --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustversion-1.0.19/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=bed9cb09d1301f96 -C extra-filename=-bed9cb09d1301f96 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro --cap-lints allow --check-cfg 'cfg(cfg_macro_not_allowed)' --check-cfg 'cfg(host_os, values("windows"))'`
+2025-02-01T03:34:42.8280027Z [1m[32m   Compiling[0m serde v1.0.217
+2025-02-01T03:34:42.8310400Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.217/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="serde_derive"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "default", "derive", "rc", "serde_derive", "std", "unstable"))' -C metadata=70a02a71ef2b5b23 -C extra-filename=-70a02a71ef2b5b23 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/serde-70a02a71ef2b5b23 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.0539946Z [1m[32m   Compiling[0m scopeguard v1.2.0
+2025-02-01T03:34:43.0546697Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name scopeguard --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/scopeguard-1.2.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "use_std"))' -C metadata=78fa4b6a598a77e8 -C extra-filename=-78fa4b6a598a77e8 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.0936470Z [1m[32m   Compiling[0m cfg-if v1.0.0
+2025-02-01T03:34:43.0942518Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name cfg_if --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cfg-if-1.0.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("compiler_builtins", "core", "rustc-dep-of-std"))' -C metadata=bbb8a7c192072622 -C extra-filename=-bbb8a7c192072622 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.1206607Z [1m[32m   Compiling[0m smallvec v1.13.2
+2025-02-01T03:34:43.1230250Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name smallvec --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/smallvec-1.13.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("arbitrary", "const_generics", "const_new", "debugger_visualizer", "drain_filter", "drain_keep_rest", "may_dangle", "serde", "specialization", "union", "write"))' -C metadata=642d5383ea5b8974 -C extra-filename=-642d5383ea5b8974 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.2840794Z [1m[32m   Compiling[0m futures-core v0.3.31
+2025-02-01T03:34:43.2854134Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name futures_core --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-core-0.3.31/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs --warn=single_use_lifetimes --warn=rust_2018_idioms --warn=missing_debug_implementations --check-cfg 'cfg(futures_sanitizer)' --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "cfg-target-has-atomic", "default", "portable-atomic", "std", "unstable"))' -C metadata=23a10e0bf332e8f8 -C extra-filename=-23a10e0bf332e8f8 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.3680026Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name parking_lot_core --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/parking_lot_core-0.9.10/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("backtrace", "deadlock_detection", "nightly", "petgraph", "thread-id"))' -C metadata=b2f6d25465c3c66c -C extra-filename=-b2f6d25465c3c66c --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern cfg_if=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libcfg_if-bbb8a7c192072622.rmeta --extern libc=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblibc-b6e0b06e8aec560b.rmeta --extern smallvec=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsmallvec-642d5383ea5b8974.rmeta --cap-lints allow`
+2025-02-01T03:34:43.6073576Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name lock_api --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/lock_api-0.4.12/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="atomic_usize"' --cfg 'feature="default"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("arc_lock", "atomic_usize", "default", "nightly", "owning_ref", "serde"))' -C metadata=5a7d25bb21081e1f -C extra-filename=-5a7d25bb21081e1f --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern scopeguard=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libscopeguard-78fa4b6a598a77e8.rmeta --cap-lints allow --cfg has_const_fn_trait_bound`
+2025-02-01T03:34:43.7711358Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/serde-70a02a71ef2b5b23/build-script-build`
+2025-02-01T03:34:43.7877247Z [1m[32m   Compiling[0m fnv v1.0.7
+2025-02-01T03:34:43.7896292Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name fnv --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/fnv-1.0.7/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "std"))' -C metadata=04c65f599b9418c8 -C extra-filename=-04c65f599b9418c8 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.8278379Z [1m[32m   Compiling[0m futures-task v0.3.31
+2025-02-01T03:34:43.8286134Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name futures_task --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs --warn=single_use_lifetimes --warn=rust_2018_idioms --warn=missing_debug_implementations --check-cfg 'cfg(futures_sanitizer)' --cfg 'feature="alloc"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "cfg-target-has-atomic", "default", "std", "unstable"))' -C metadata=ca12ed4e5657fd3e -C extra-filename=-ca12ed4e5657fd3e --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.9212750Z [1m[32m   Compiling[0m pin-utils v0.1.0
+2025-02-01T03:34:43.9218005Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name pin_utils --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-utils-0.1.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=dac19493074fda55 -C extra-filename=-dac19493074fda55 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:43.9487613Z [1m[32m   Compiling[0m once_cell v1.20.2
+2025-02-01T03:34:43.9496170Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name once_cell --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.20.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="race"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "atomic-polyfill", "critical-section", "default", "parking_lot", "portable-atomic", "race", "std", "unstable"))' -C metadata=b8725926482cf9f4 -C extra-filename=-b8725926482cf9f4 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:44.1131692Z [1m[32m   Compiling[0m tracing-core v0.1.33
+2025-02-01T03:34:44.1151994Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tracing_core --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tracing-core-0.1.33/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unexpected_cfgs --check-cfg 'cfg(flaky_tests)' --check-cfg 'cfg(tracing_unstable)' --cfg 'feature="once_cell"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "once_cell", "std", "valuable"))' -C metadata=756c634aa4a69bfb -C extra-filename=-756c634aa4a69bfb --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern once_cell=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libonce_cell-b8725926482cf9f4.rmeta --cap-lints allow`
+2025-02-01T03:34:44.7950673Z [1m[32m   Compiling[0m serde_derive v1.0.217
+2025-02-01T03:34:44.7973849Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name serde_derive --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_derive-1.0.217/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no --cfg 'feature="default"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "deserialize_in_place"))' -C metadata=0cdf7eb2f230f544 -C extra-filename=-0cdf7eb2f230f544 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libproc_macro2-aaf4092513e4f442.rlib --extern quote=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libquote-bcb6df4d38097762.rlib --extern syn=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsyn-713c6ba4feb4bce7.rlib --extern proc_macro --cap-lints allow`
+2025-02-01T03:34:44.8005801Z [1m[32m   Compiling[0m tokio-macros v2.5.0
+2025-02-01T03:34:44.8027225Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tokio_macros --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-macros-2.5.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=22865eec4d058f4f -C extra-filename=-22865eec4d058f4f --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libproc_macro2-aaf4092513e4f442.rlib --extern quote=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libquote-bcb6df4d38097762.rlib --extern syn=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsyn-713c6ba4feb4bce7.rlib --extern proc_macro --cap-lints allow`
+2025-02-01T03:34:45.5501701Z [1m[32m   Compiling[0m futures-util v0.3.31
+2025-02-01T03:34:45.5567694Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name futures_util --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-util-0.3.31/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs --warn=single_use_lifetimes --warn=rust_2018_idioms --warn=missing_debug_implementations --check-cfg 'cfg(futures_sanitizer)' --cfg 'feature="alloc"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "async-await", "async-await-macro", "bilock", "cfg-target-has-atomic", "channel", "compat", "default", "futures-channel", "futures-io", "futures-macro", "futures-sink", "futures_01", "io", "io-compat", "memchr", "portable-atomic", "sink", "slab", "std", "tokio-io", "unstable", "write-all-vectored"))' -C metadata=986ae311ca4c8bc0 -C extra-filename=-986ae311ca4c8bc0 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_task=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_task-ca12ed4e5657fd3e.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern pin_utils=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_utils-dac19493074fda55.rmeta --cap-lints allow`
+2025-02-01T03:34:47.1975710Z [1m[32m   Compiling[0m http v0.2.12
+2025-02-01T03:34:47.1983117Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name http --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/http-0.2.12/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=77980583dc1a5938 -C extra-filename=-77980583dc1a5938 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern fnv=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfnv-04c65f599b9418c8.rmeta --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --cap-lints allow`
+2025-02-01T03:34:48.2720335Z [1m[32m   Compiling[0m parking_lot v0.12.3
+2025-02-01T03:34:48.2742489Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name parking_lot --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/parking_lot-0.12.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("arc_lock", "deadlock_detection", "default", "hardware-lock-elision", "nightly", "owning_ref", "send_guard", "serde"))' -C metadata=8f2d884165998ff3 -C extra-filename=-8f2d884165998ff3 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern lock_api=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblock_api-5a7d25bb21081e1f.rmeta --extern parking_lot_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libparking_lot_core-b2f6d25465c3c66c.rmeta --cap-lints allow`
+2025-02-01T03:34:48.3095772Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name serde --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.217/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="derive"' --cfg 'feature="serde_derive"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "default", "derive", "rc", "serde_derive", "std", "unstable"))' -C metadata=d8fa30bff9dadefd -C extra-filename=-d8fa30bff9dadefd --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern serde_derive=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_derive-0cdf7eb2f230f544.so --cap-lints allow --check-cfg 'cfg(no_core_cstr)' --check-cfg 'cfg(no_core_error)' --check-cfg 'cfg(no_core_net)' --check-cfg 'cfg(no_core_num_saturating)' --check-cfg 'cfg(no_core_try_from)' --check-cfg 'cfg(no_diagnostic_namespace)' --check-cfg 'cfg(no_float_copysign)' --check-cfg 'cfg(no_num_nonzero_signed)' --check-cfg 'cfg(no_relaxed_trait_bounds)' --check-cfg 'cfg(no_serde_derive)' --check-cfg 'cfg(no_std_atomic)' --check-cfg 'cfg(no_std_atomic64)' --check-cfg 'cfg(no_systemtime_checked_add)' --check-cfg 'cfg(no_target_has_atomic)'`
+2025-02-01T03:34:48.6457438Z [1m[32m   Compiling[0m signal-hook-registry v1.4.2
+2025-02-01T03:34:48.6464730Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name signal_hook_registry --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/signal-hook-registry-1.4.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=9e25b847233a3bb2 -C extra-filename=-9e25b847233a3bb2 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern libc=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblibc-b6e0b06e8aec560b.rmeta --cap-lints allow`
+2025-02-01T03:34:49.0153837Z [1m[32m   Compiling[0m mio v1.0.3
+2025-02-01T03:34:49.0179120Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name mio --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/mio-1.0.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unexpected_cfgs --check-cfg 'cfg(mio_unsupported_force_poll_poll)' --check-cfg 'cfg(mio_unsupported_force_waker_pipe)' --cfg 'feature="net"' --cfg 'feature="os-ext"' --cfg 'feature="os-poll"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "log", "net", "os-ext", "os-poll"))' -C metadata=90b6b2220498d219 -C extra-filename=-90b6b2220498d219 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern libc=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblibc-b6e0b06e8aec560b.rmeta --cap-lints allow`
+2025-02-01T03:34:49.5644390Z [1m[32m   Compiling[0m socket2 v0.5.8
+2025-02-01T03:34:49.5656224Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name socket2 --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="all"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("all"))' -C metadata=b45e08f047001ba3 -C extra-filename=-b45e08f047001ba3 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern libc=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblibc-b6e0b06e8aec560b.rmeta --cap-lints allow`
+2025-02-01T03:34:50.0822419Z [1m[32m   Compiling[0m httparse v1.10.0
+2025-02-01T03:34:50.0835675Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.0/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --warn=unexpected_cfgs --check-cfg 'cfg(httparse_simd)' --check-cfg 'cfg(httparse_simd_target_feature_avx2)' --check-cfg 'cfg(httparse_simd_target_feature_sse42)' --check-cfg 'cfg(httparse_simd_neon_intrinsics)' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "std"))' -C metadata=66697981f70ff9e3 -C extra-filename=-66697981f70ff9e3 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/httparse-66697981f70ff9e3 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:50.3916726Z [1m[32m   Compiling[0m log v0.4.25
+2025-02-01T03:34:50.3944427Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name log --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.25/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("kv", "kv_serde", "kv_std", "kv_sval", "kv_unstable", "kv_unstable_serde", "kv_unstable_std", "kv_unstable_sval", "max_level_debug", "max_level_error", "max_level_info", "max_level_off", "max_level_trace", "max_level_warn", "release_max_level_debug", "release_max_level_error", "release_max_level_info", "release_max_level_off", "release_max_level_trace", "release_max_level_warn", "serde", "std", "sval", "sval_ref", "value-bag"))' -C metadata=a2de6cebf6e3e2e9 -C extra-filename=-a2de6cebf6e3e2e9 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:50.6030654Z [1m[32m   Compiling[0m tower-service v0.3.3
+2025-02-01T03:34:50.6042889Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tower_service --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tower-service-0.3.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=fde17096c5811931 -C extra-filename=-fde17096c5811931 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:50.6453420Z [1m[32m   Compiling[0m tracing v0.1.41
+2025-02-01T03:34:50.6468346Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tracing --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tracing-0.1.41/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unexpected_cfgs --check-cfg 'cfg(flaky_tests)' --check-cfg 'cfg(tracing_unstable)' --cfg 'feature="log"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("async-await", "attributes", "default", "log", "log-always", "max_level_debug", "max_level_error", "max_level_info", "max_level_off", "max_level_trace", "max_level_warn", "release_max_level_debug", "release_max_level_error", "release_max_level_info", "release_max_level_off", "release_max_level_trace", "release_max_level_warn", "std", "tracing-attributes", "valuable"))' -C metadata=258e4a7dd62b4bfe -C extra-filename=-258e4a7dd62b4bfe --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern log=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblog-a2de6cebf6e3e2e9.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern tracing_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtracing_core-756c634aa4a69bfb.rmeta --cap-lints allow`
+2025-02-01T03:34:50.8429500Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/httparse-66697981f70ff9e3/build-script-build`
+2025-02-01T03:34:50.8590790Z [1m[32m   Compiling[0m tokio v1.43.0
+2025-02-01T03:34:50.8614164Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tokio --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.43.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="bytes"' --cfg 'feature="default"' --cfg 'feature="fs"' --cfg 'feature="full"' --cfg 'feature="io-std"' --cfg 'feature="io-util"' --cfg 'feature="libc"' --cfg 'feature="macros"' --cfg 'feature="mio"' --cfg 'feature="net"' --cfg 'feature="parking_lot"' --cfg 'feature="process"' --cfg 'feature="rt"' --cfg 'feature="rt-multi-thread"' --cfg 'feature="signal"' --cfg 'feature="signal-hook-registry"' --cfg 'feature="socket2"' --cfg 'feature="sync"' --cfg 'feature="time"' --cfg 'feature="tokio-macros"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("bytes", "default", "fs", "full", "io-std", "io-util", "libc", "macros", "mio", "net", "parking_lot", "process", "rt", "rt-multi-thread", "signal", "signal-hook-registry", "socket2", "sync", "test-util", "time", "tokio-macros", "tracing", "windows-sys"))' -C metadata=f40cabf853e23eb6 -C extra-filename=-f40cabf853e23eb6 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern libc=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/liblibc-b6e0b06e8aec560b.rmeta --extern mio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmio-90b6b2220498d219.rmeta --extern parking_lot=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libparking_lot-8f2d884165998ff3.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern signal_hook_registry=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsignal_hook_registry-9e25b847233a3bb2.rmeta --extern socket2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsocket2-b45e08f047001ba3.rmeta --extern tokio_macros=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio_macros-22865eec4d058f4f.so --cap-lints allow`
+2025-02-01T03:34:51.0744062Z [1m[32m   Compiling[0m http-body v0.4.6
+2025-02-01T03:34:51.0770369Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name http_body --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/http-body-0.4.6/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=be5a9966e533ac9f -C extra-filename=-be5a9966e533ac9f --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --cap-lints allow`
+2025-02-01T03:34:51.2349509Z [1m[32m   Compiling[0m pin-project-internal v1.1.8
+2025-02-01T03:34:51.2400357Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name pin_project_internal --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-internal-1.1.8/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no --warn=unreachable_pub --warn=unexpected_cfgs '--warn=clippy::undocumented_unsafe_blocks' '--warn=clippy::transmute_undefined_repr' '--warn=clippy::trailing_empty_array' --warn=single_use_lifetimes --warn=rust_2018_idioms '--warn=clippy::pedantic' --warn=non_ascii_idents '--warn=clippy::inline_asm_x86_att_syntax' --warn=improper_ctypes_definitions --warn=improper_ctypes --warn=deprecated_safe '--warn=clippy::default_union_representation' '--warn=clippy::as_underscore' '--warn=clippy::as_ptr_cast_mut' '--warn=clippy::all' '--allow=clippy::unreadable_literal' '--allow=clippy::type_complexity' '--allow=clippy::too_many_lines' '--allow=clippy::too_many_arguments' '--allow=clippy::struct_field_names' '--allow=clippy::struct_excessive_bools' '--allow=clippy::single_match_else' '--allow=clippy::single_match' '--allow=clippy::similar_names' '--allow=clippy::range_plus_one' '--allow=clippy::nonminimal_bool' '--allow=clippy::naive_bytecount' '--allow=clippy::module_name_repetitions' '--allow=clippy::missing_errors_doc' '--allow=clippy::manual_range_contains' '--allow=clippy::manual_assert' '--allow=clippy::lint_groups_priority' '--allow=clippy::incompatible_msrv' '--allow=clippy::float_cmp' '--allow=clippy::doc_markdown' '--allow=clippy::declare_interior_mutable_const' '--allow=clippy::cast_lossless' '--allow=clippy::borrow_as_ptr' '--allow=clippy::bool_assert_comparison' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=3a61b31780154498 -C extra-filename=-3a61b31780154498 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libproc_macro2-aaf4092513e4f442.rlib --extern quote=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libquote-bcb6df4d38097762.rlib --extern syn=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsyn-713c6ba4feb4bce7.rlib --extern proc_macro --cap-lints allow`
+2025-02-01T03:34:52.5544084Z [1m[32m   Compiling[0m axum-core v0.3.4
+2025-02-01T03:34:52.5569754Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/axum-core-0.3.4/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__private_docs", "tracing"))' -C metadata=a892222251fb2d6f -C extra-filename=-a892222251fb2d6f --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/axum-core-a892222251fb2d6f -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern rustversion=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/librustversion-bed9cb09d1301f96.so --cap-lints allow`
+2025-02-01T03:34:52.6995770Z [1m[32m   Compiling[0m percent-encoding v2.3.1
+2025-02-01T03:34:52.7019811Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name percent_encoding --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/percent-encoding-2.3.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "default", "std"))' -C metadata=ad71ecc825afcd5a -C extra-filename=-ad71ecc825afcd5a --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:52.8236912Z [1m[32m   Compiling[0m serde_json v1.0.138
+2025-02-01T03:34:52.8261143Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_json-1.0.138/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="raw_value"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "arbitrary_precision", "default", "float_roundtrip", "indexmap", "preserve_order", "raw_value", "std", "unbounded_depth"))' -C metadata=66430541c517d677 -C extra-filename=-66430541c517d677 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/serde_json-66430541c517d677 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:52.9846296Z [1m[32m   Compiling[0m tower-layer v0.3.3
+2025-02-01T03:34:52.9856017Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tower_layer --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tower-layer-0.3.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=c7702ed9e993fcea -C extra-filename=-c7702ed9e993fcea --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:53.0969483Z [1m[32m   Compiling[0m try-lock v0.2.5
+2025-02-01T03:34:53.0987801Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name try_lock --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/try-lock-0.2.5/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=8c34ada347ce81f5 -C extra-filename=-8c34ada347ce81f5 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:53.1408028Z [1m[32m   Compiling[0m ryu v1.0.19
+2025-02-01T03:34:53.1439256Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name ryu --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ryu-1.0.19/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("no-panic", "small"))' -C metadata=28ea64b9f43122a9 -C extra-filename=-28ea64b9f43122a9 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:53.2940514Z [1m[32m   Compiling[0m want v0.3.1
+2025-02-01T03:34:53.2953369Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name want --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/want-0.3.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=81c8b66dbf998e56 -C extra-filename=-81c8b66dbf998e56 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern try_lock=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtry_lock-8c34ada347ce81f5.rmeta --cap-lints allow`
+2025-02-01T03:34:53.3949642Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/serde_json-66430541c517d677/build-script-build`
+2025-02-01T03:34:53.3986537Z [1m[32m   Compiling[0m form_urlencoded v1.2.1
+2025-02-01T03:34:53.3998821Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name form_urlencoded --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/form_urlencoded-1.2.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "default", "std"))' -C metadata=6e9ffa687e0713cb -C extra-filename=-6e9ffa687e0713cb --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern percent_encoding=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpercent_encoding-ad71ecc825afcd5a.rmeta --cap-lints allow`
+2025-02-01T03:34:53.5434519Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/axum-core-a892222251fb2d6f/build-script-build`
+2025-02-01T03:34:53.5479480Z [1m[32m   Compiling[0m pin-project v1.1.8
+2025-02-01T03:34:53.5496544Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name pin_project --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-1.1.8/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs '--warn=clippy::undocumented_unsafe_blocks' '--warn=clippy::transmute_undefined_repr' '--warn=clippy::trailing_empty_array' --warn=single_use_lifetimes --warn=rust_2018_idioms '--warn=clippy::pedantic' --warn=non_ascii_idents '--warn=clippy::inline_asm_x86_att_syntax' --warn=improper_ctypes_definitions --warn=improper_ctypes --warn=deprecated_safe '--warn=clippy::default_union_representation' '--warn=clippy::as_underscore' '--warn=clippy::as_ptr_cast_mut' '--warn=clippy::all' '--allow=clippy::unreadable_literal' '--allow=clippy::type_complexity' '--allow=clippy::too_many_lines' '--allow=clippy::too_many_arguments' '--allow=clippy::struct_field_names' '--allow=clippy::struct_excessive_bools' '--allow=clippy::single_match_else' '--allow=clippy::single_match' '--allow=clippy::similar_names' '--allow=clippy::range_plus_one' '--allow=clippy::nonminimal_bool' '--allow=clippy::naive_bytecount' '--allow=clippy::module_name_repetitions' '--allow=clippy::missing_errors_doc' '--allow=clippy::manual_range_contains' '--allow=clippy::manual_assert' '--allow=clippy::lint_groups_priority' '--allow=clippy::incompatible_msrv' '--allow=clippy::float_cmp' '--allow=clippy::doc_markdown' '--allow=clippy::declare_interior_mutable_const' '--allow=clippy::cast_lossless' '--allow=clippy::borrow_as_ptr' '--allow=clippy::bool_assert_comparison' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=8b2b46177fc6bac9 -C extra-filename=-8b2b46177fc6bac9 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern pin_project_internal=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_internal-3a61b31780154498.so --cap-lints allow`
+2025-02-01T03:34:53.5852583Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name httparse --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unexpected_cfgs --check-cfg 'cfg(httparse_simd)' --check-cfg 'cfg(httparse_simd_target_feature_avx2)' --check-cfg 'cfg(httparse_simd_target_feature_sse42)' --check-cfg 'cfg(httparse_simd_neon_intrinsics)' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "std"))' -C metadata=17a928b2dce799e8 -C extra-filename=-17a928b2dce799e8 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow --cfg httparse_simd_neon_intrinsics --cfg httparse_simd`
+2025-02-01T03:34:53.8649304Z [1m[32m   Compiling[0m async-trait v0.1.85
+2025-02-01T03:34:53.8672514Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name async_trait --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.85/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type proc-macro --emit=dep-info,link -C prefer-dynamic -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=8d7515adcd639c6e -C extra-filename=-8d7515adcd639c6e --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern proc_macro2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libproc_macro2-aaf4092513e4f442.rlib --extern quote=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libquote-bcb6df4d38097762.rlib --extern syn=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsyn-713c6ba4feb4bce7.rlib --extern proc_macro --cap-lints allow`
+2025-02-01T03:34:54.9240975Z [1m[32m   Compiling[0m futures-channel v0.3.31
+2025-02-01T03:34:54.9251290Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name futures_channel --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-channel-0.3.31/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs --warn=single_use_lifetimes --warn=rust_2018_idioms --warn=missing_debug_implementations --check-cfg 'cfg(futures_sanitizer)' --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "cfg-target-has-atomic", "default", "futures-sink", "sink", "std", "unstable"))' -C metadata=f2a515c489a547d0 -C extra-filename=-f2a515c489a547d0 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --cap-lints allow`
+2025-02-01T03:34:55.0717454Z [1m[32m   Compiling[0m axum v0.6.20
+2025-02-01T03:34:55.0728623Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/axum-0.6.20/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="form"' --cfg 'feature="http1"' --cfg 'feature="json"' --cfg 'feature="matched-path"' --cfg 'feature="original-uri"' --cfg 'feature="query"' --cfg 'feature="tokio"' --cfg 'feature="tower-log"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__private_docs", "default", "form", "headers", "http1", "http2", "json", "macros", "matched-path", "multipart", "original-uri", "query", "tokio", "tower-log", "tracing", "ws"))' -C metadata=2cf30a1006763041 -C extra-filename=-2cf30a1006763041 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/axum-2cf30a1006763041 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern rustversion=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/librustversion-bed9cb09d1301f96.so --cap-lints allow`
+2025-02-01T03:34:55.2169111Z [1m[32m   Compiling[0m mime v0.3.17
+2025-02-01T03:34:55.2178237Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name mime --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/mime-0.3.17/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=159552e04b01cc26 -C extra-filename=-159552e04b01cc26 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:55.4367264Z [1m[32m   Compiling[0m httpdate v1.0.3
+2025-02-01T03:34:55.4386867Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name httpdate --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httpdate-1.0.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=1d4d3b7ec5d730ed -C extra-filename=-1d4d3b7ec5d730ed --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:55.6151804Z [1m[32m   Compiling[0m memchr v2.7.4
+2025-02-01T03:34:55.6164170Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name memchr --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/memchr-2.7.4/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "compiler_builtins", "core", "default", "libc", "logging", "rustc-dep-of-std", "std", "use_std"))' -C metadata=d09f7be4d9a1578c -C extra-filename=-d09f7be4d9a1578c --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:34:56.3993828Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name serde_json --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_json-1.0.138/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="raw_value"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "arbitrary_precision", "default", "float_roundtrip", "indexmap", "preserve_order", "raw_value", "std", "unbounded_depth"))' -C metadata=dd842ac94a91db3e -C extra-filename=-dd842ac94a91db3e --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern memchr=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmemchr-d09f7be4d9a1578c.rmeta --extern ryu=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libryu-28ea64b9f43122a9.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --cap-lints allow --cfg 'fast_arithmetic="64"' --check-cfg 'cfg(fast_arithmetic, values("32", "64"))'`
+2025-02-01T03:34:57.8509973Z [1m[32m   Compiling[0m hyper v0.14.32
+2025-02-01T03:34:57.8535620Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name hyper --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-0.14.32/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="http1"' --cfg 'feature="runtime"' --cfg 'feature="server"' --cfg 'feature="socket2"' --cfg 'feature="stream"' --cfg 'feature="tcp"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__internal_happy_eyeballs_tests", "backports", "client", "default", "deprecated", "ffi", "full", "h2", "http1", "http2", "libc", "nightly", "runtime", "server", "socket2", "stream", "tcp"))' -C metadata=ccb04c7733a87d47 -C extra-filename=-ccb04c7733a87d47 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern futures_channel=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_channel-f2a515c489a547d0.rmeta --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern http_body=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp_body-be5a9966e533ac9f.rmeta --extern httparse=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttparse-17a928b2dce799e8.rmeta --extern httpdate=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttpdate-1d4d3b7ec5d730ed.rmeta --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern socket2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsocket2-b45e08f047001ba3.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --extern tracing=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtracing-258e4a7dd62b4bfe.rmeta --extern want=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libwant-81c8b66dbf998e56.rmeta --cap-lints allow`
+2025-02-01T03:34:58.4967330Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name axum_core --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/axum-core-0.3.4/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__private_docs", "tracing"))' -C metadata=9294f34178c8e945 -C extra-filename=-9294f34178c8e945 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern async_trait=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libasync_trait-8d7515adcd639c6e.so --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern http_body=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp_body-be5a9966e533ac9f.rmeta --extern mime=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmime-159552e04b01cc26.rmeta --extern tower_layer=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_layer-c7702ed9e993fcea.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --cap-lints allow`
+2025-02-01T03:35:00.2703679Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/axum-2cf30a1006763041/build-script-build`
+2025-02-01T03:35:00.2750999Z [1m[32m   Compiling[0m tower v0.4.13
+2025-02-01T03:35:00.2772251Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tower --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tower-0.4.13/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="__common"' --cfg 'feature="futures-core"' --cfg 'feature="futures-util"' --cfg 'feature="log"' --cfg 'feature="make"' --cfg 'feature="pin-project"' --cfg 'feature="pin-project-lite"' --cfg 'feature="tokio"' --cfg 'feature="tracing"' --cfg 'feature="util"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__common", "balance", "buffer", "default", "discover", "filter", "full", "futures-core", "futures-util", "hdrhistogram", "hedge", "indexmap", "limit", "load", "load-shed", "log", "make", "pin-project", "pin-project-lite", "rand", "ready-cache", "reconnect", "retry", "slab", "spawn-ready", "steer", "timeout", "tokio", "tokio-stream", "tokio-util", "tracing", "util"))' -C metadata=739fa0376abb1097 -C extra-filename=-739fa0376abb1097 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern pin_project=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project-8b2b46177fc6bac9.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tower_layer=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_layer-c7702ed9e993fcea.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --extern tracing=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtracing-258e4a7dd62b4bfe.rmeta --cap-lints allow`
+2025-02-01T03:35:00.5476179Z [1m[32m   Compiling[0m serde_urlencoded v0.7.1
+2025-02-01T03:35:00.5485308Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name serde_urlencoded --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_urlencoded-0.7.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=8d96bf63b1aa571c -C extra-filename=-8d96bf63b1aa571c --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern form_urlencoded=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libform_urlencoded-6e9ffa687e0713cb.rmeta --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern ryu=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libryu-28ea64b9f43122a9.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --cap-lints allow`
+2025-02-01T03:35:00.5980063Z [1m[32m   Compiling[0m serde_path_to_error v0.1.16
+2025-02-01T03:35:00.6005356Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name serde_path_to_error --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_path_to_error-0.1.16/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=538dee7e5a1afeed -C extra-filename=-538dee7e5a1afeed --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --cap-lints allow`
+2025-02-01T03:35:00.7427641Z [1m[32m   Compiling[0m matchit v0.7.3
+2025-02-01T03:35:00.7443946Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name matchit --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/matchit-0.7.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__test_helpers", "default"))' -C metadata=3bae47f6324cf957 -C extra-filename=-3bae47f6324cf957 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:00.9498586Z [1m[32m   Compiling[0m bitflags v1.3.2
+2025-02-01T03:35:00.9504893Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name bitflags --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bitflags-1.3.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("compiler_builtins", "core", "default", "example_generated", "rustc-dep-of-std"))' -C metadata=1ae6cbd7b946ebd3 -C extra-filename=-1ae6cbd7b946ebd3 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:00.9839554Z [1m[32m   Compiling[0m sync_wrapper v0.1.2
+2025-02-01T03:35:00.9851675Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name sync_wrapper --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/sync_wrapper-0.1.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("futures", "futures-core"))' -C metadata=8917e66f72f5631a -C extra-filename=-8917e66f72f5631a --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:01.0190606Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name axum --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/axum-0.6.20/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="form"' --cfg 'feature="http1"' --cfg 'feature="json"' --cfg 'feature="matched-path"' --cfg 'feature="original-uri"' --cfg 'feature="query"' --cfg 'feature="tokio"' --cfg 'feature="tower-log"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__private_docs", "default", "form", "headers", "http1", "http2", "json", "macros", "matched-path", "multipart", "original-uri", "query", "tokio", "tower-log", "tracing", "ws"))' -C metadata=43b05fe150c24f5f -C extra-filename=-43b05fe150c24f5f --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern async_trait=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libasync_trait-8d7515adcd639c6e.so --extern axum_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum_core-9294f34178c8e945.rmeta --extern bitflags=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbitflags-1ae6cbd7b946ebd3.rmeta --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern http_body=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp_body-be5a9966e533ac9f.rmeta --extern hyper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhyper-ccb04c7733a87d47.rmeta --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern matchit=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmatchit-3bae47f6324cf957.rmeta --extern memchr=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmemchr-d09f7be4d9a1578c.rmeta --extern mime=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmime-159552e04b01cc26.rmeta --extern percent_encoding=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpercent_encoding-ad71ecc825afcd5a.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --extern serde_json=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_json-dd842ac94a91db3e.rmeta --extern serde_path_to_error=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_path_to_error-538dee7e5a1afeed.rmeta --extern serde_urlencoded=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_urlencoded-8d96bf63b1aa571c.rmeta --extern sync_wrapper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsync_wrapper-8917e66f72f5631a.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tower=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower-739fa0376abb1097.rmeta --extern tower_layer=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_layer-c7702ed9e993fcea.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --cap-lints allow`
+2025-02-01T03:35:03.0932420Z [1m[32m   Compiling[0m my_rust_app v0.1.0 (/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd)
+2025-02-01T03:35:03.0944428Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name my_rust_app --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=f15688588517dca6 -C extra-filename=-f15688588517dca6 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-43b05fe150c24f5f.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta`
+2025-02-01T03:35:03.3775046Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name my_rust_app --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=51889d9916ff2072 -C extra-filename=-51889d9916ff2072 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-43b05fe150c24f5f.rlib --extern my_rust_app=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmy_rust_app-f15688588517dca6.rlib --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rlib --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rlib`
+2025-02-01T03:35:03.4024268Z [0m[1m[33mwarning[0m[0m[1m: found module declaration for lib.rs[0m
+2025-02-01T03:35:03.4025071Z [0m [0m[0m[1m[38;5;12m--> [0m[0msrc/main.rs:6:1[0m
+2025-02-01T03:35:03.4025644Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:03.4026286Z [0m[1m[38;5;12m6[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mmod lib;[0m
+2025-02-01T03:35:03.4027164Z [0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[33m^^^^^^^^[0m
+2025-02-01T03:35:03.4027706Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:03.4028384Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: lib.rs is the root of this crate's library target[0m
+2025-02-01T03:35:03.4029411Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: to refer to it from other targets, use the library's name as the path[0m
+2025-02-01T03:35:03.4030417Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(special_module_name)]` on by default[0m
+2025-02-01T03:35:03.4039963Z 
+2025-02-01T03:35:03.4040626Z [0m[1m[33mwarning[0m[0m[1m: unused import: `serde::Serialize`[0m
+2025-02-01T03:35:03.4041339Z [0m [0m[0m[1m[38;5;12m--> [0m[0msrc/main.rs:2:5[0m
+2025-02-01T03:35:03.4041867Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:03.4042578Z [0m[1m[38;5;12m2[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse serde::Serialize;[0m
+2025-02-01T03:35:03.4043294Z [0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+2025-02-01T03:35:03.4043818Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:03.4044467Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+2025-02-01T03:35:03.4044919Z 
+2025-02-01T03:35:04.8303081Z [1m[33mwarning[0m[1m:[0m `my_rust_app` (bin "my_rust_app") generated 2 warnings (run `cargo fix --bin "my_rust_app"` to apply 1 suggestion)
+2025-02-01T03:35:04.8305209Z [1m[32m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 26.46s
+2025-02-01T03:35:04.8632650Z ##[group]Run cargo test --verbose
+2025-02-01T03:35:04.8632955Z [36;1mcargo test --verbose[0m
+2025-02-01T03:35:04.8660167Z shell: /usr/bin/bash -e {0}
+2025-02-01T03:35:04.8660386Z env:
+2025-02-01T03:35:04.8660548Z   CARGO_TERM_COLOR: always
+2025-02-01T03:35:04.8660764Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:35:04.8660990Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:35:04.8661174Z ##[endgroup]
+2025-02-01T03:35:04.9470327Z [1m[32m       Fresh[0m unicode-ident v1.0.16
+2025-02-01T03:35:04.9476041Z [1m[32m       Fresh[0m proc-macro2 v1.0.93
+2025-02-01T03:35:04.9476580Z [1m[32m       Fresh[0m quote v1.0.38
+2025-02-01T03:35:04.9477286Z [1m[32m       Fresh[0m autocfg v1.4.0
+2025-02-01T03:35:04.9477777Z [1m[32m       Fresh[0m syn v2.0.96
+2025-02-01T03:35:04.9478219Z [1m[32m       Fresh[0m libc v0.2.169
+2025-02-01T03:35:04.9478729Z [1m[32m       Fresh[0m pin-project-lite v0.2.16
+2025-02-01T03:35:04.9479240Z [1m[32m       Fresh[0m itoa v1.0.14
+2025-02-01T03:35:04.9480076Z [1m[32m       Fresh[0m bytes v1.9.0
+2025-02-01T03:35:04.9480559Z [1m[32m       Fresh[0m futures-core v0.3.31
+2025-02-01T03:35:04.9481081Z [1m[32m       Fresh[0m cfg-if v1.0.0
+2025-02-01T03:35:04.9481594Z [1m[32m       Fresh[0m smallvec v1.13.2
+2025-02-01T03:35:04.9482130Z [1m[32m       Fresh[0m scopeguard v1.2.0
+2025-02-01T03:35:04.9482702Z [1m[32m       Fresh[0m parking_lot_core v0.9.10
+2025-02-01T03:35:04.9483236Z [1m[32m       Fresh[0m lock_api v0.4.12
+2025-02-01T03:35:04.9483750Z [1m[32m       Fresh[0m rustversion v1.0.19
+2025-02-01T03:35:04.9484284Z [1m[32m       Fresh[0m parking_lot v0.12.3
+2025-02-01T03:35:04.9484846Z [1m[32m       Fresh[0m signal-hook-registry v1.4.2
+2025-02-01T03:35:04.9485356Z [1m[32m       Fresh[0m mio v1.0.3
+2025-02-01T03:35:04.9485812Z [1m[32m       Fresh[0m socket2 v0.5.8
+2025-02-01T03:35:04.9486311Z [1m[32m       Fresh[0m tokio-macros v2.5.0
+2025-02-01T03:35:04.9486818Z [1m[32m       Fresh[0m futures-task v0.3.31
+2025-02-01T03:35:04.9487573Z [1m[32m       Fresh[0m fnv v1.0.7
+2025-02-01T03:35:04.9507673Z [1m[32m       Fresh[0m pin-utils v0.1.0
+2025-02-01T03:35:04.9508219Z [1m[32m       Fresh[0m once_cell v1.20.2
+2025-02-01T03:35:04.9508733Z [1m[32m       Fresh[0m http v0.2.12
+2025-02-01T03:35:04.9509249Z [1m[32m       Fresh[0m tracing-core v0.1.33
+2025-02-01T03:35:04.9509791Z [1m[32m       Fresh[0m futures-util v0.3.31
+2025-02-01T03:35:04.9510299Z [1m[32m       Fresh[0m tokio v1.43.0
+2025-02-01T03:35:04.9510810Z [1m[32m       Fresh[0m serde_derive v1.0.217
+2025-02-01T03:35:04.9511307Z [1m[32m   Compiling[0m slab v0.4.9
+2025-02-01T03:35:04.9511776Z [1m[32m       Fresh[0m log v0.4.25
+2025-02-01T03:35:04.9512246Z [1m[32m       Fresh[0m tracing v0.1.41
+2025-02-01T03:35:04.9512731Z [1m[32m       Fresh[0m serde v1.0.217
+2025-02-01T03:35:04.9513231Z [1m[32m   Compiling[0m hashbrown v0.15.2
+2025-02-01T03:35:04.9520381Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name build_script_build --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slab-0.4.9/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "serde", "std"))' -C metadata=8934d0082ea40382 -C extra-filename=-8934d0082ea40382 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/slab-8934d0082ea40382 -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern autocfg=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libautocfg-acd24b9751bec413.rlib --cap-lints allow`
+2025-02-01T03:35:04.9542678Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name hashbrown --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hashbrown-0.15.2/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "allocator-api2", "compiler_builtins", "core", "default", "default-hasher", "equivalent", "inline-more", "nightly", "raw-entry", "rayon", "rustc-dep-of-std", "rustc-internal-api", "serde"))' -C metadata=3494205c1f959400 -C extra-filename=-3494205c1f959400 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:05.1186527Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/build/slab-8934d0082ea40382/build-script-build`
+2025-02-01T03:35:05.1571908Z [1m[32m   Compiling[0m futures-sink v0.3.31
+2025-02-01T03:35:05.1589268Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name futures_sink --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-sink-0.3.31/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --warn=unreachable_pub --warn=unexpected_cfgs --warn=single_use_lifetimes --warn=rust_2018_idioms --warn=missing_debug_implementations --check-cfg 'cfg(futures_sanitizer)' --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "default", "std"))' -C metadata=3f42e34907eff17f -C extra-filename=-3f42e34907eff17f --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:05.2066564Z [1m[32m   Compiling[0m equivalent v1.0.1
+2025-02-01T03:35:05.2073626Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name equivalent --edition=2015 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/equivalent-1.0.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=b1313bbe70d1cfce -C extra-filename=-b1313bbe70d1cfce --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:05.2488561Z [1m[32m       Fresh[0m tower-service v0.3.3
+2025-02-01T03:35:05.2489152Z [1m[32m   Compiling[0m tokio-util v0.7.13
+2025-02-01T03:35:05.2500367Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tokio_util --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-util-0.7.13/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="codec"' --cfg 'feature="default"' --cfg 'feature="io"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__docs_rs", "codec", "compat", "default", "full", "futures-io", "futures-util", "hashbrown", "io", "io-util", "net", "rt", "slab", "time", "tracing"))' -C metadata=61eb77cba1d039f3 -C extra-filename=-61eb77cba1d039f3 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_sink=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_sink-3f42e34907eff17f.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --cap-lints allow`
+2025-02-01T03:35:05.5617928Z [1m[32m   Compiling[0m indexmap v2.7.1
+2025-02-01T03:35:05.5626831Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name indexmap --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/indexmap-2.7.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 '--allow=clippy::style' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("arbitrary", "borsh", "default", "quickcheck", "rayon", "rustc-rayon", "serde", "std", "test_debug"))' -C metadata=99931f4b27da69dd -C extra-filename=-99931f4b27da69dd --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern equivalent=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libequivalent-b1313bbe70d1cfce.rmeta --extern hashbrown=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhashbrown-3494205c1f959400.rmeta --cap-lints allow`
+2025-02-01T03:35:05.8763701Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name slab --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slab-0.4.9/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("default", "serde", "std"))' -C metadata=3e9a05974b8e276a -C extra-filename=-3e9a05974b8e276a --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --cap-lints allow`
+2025-02-01T03:35:05.9815089Z [1m[32m       Fresh[0m http-body v0.4.6
+2025-02-01T03:35:05.9816245Z [1m[32m       Fresh[0m pin-project-internal v1.1.8
+2025-02-01T03:35:05.9817762Z [1m[32m       Fresh[0m ryu v1.0.19
+2025-02-01T03:35:05.9818588Z [1m[32m       Fresh[0m tower-layer v0.3.3
+2025-02-01T03:35:05.9819750Z [1m[32m       Fresh[0m percent-encoding v2.3.1
+2025-02-01T03:35:05.9820594Z [1m[32m       Fresh[0m try-lock v0.2.5
+2025-02-01T03:35:05.9821796Z [1m[32m       Fresh[0m want v0.3.1
+2025-02-01T03:35:05.9822703Z [1m[32m       Fresh[0m form_urlencoded v1.2.1
+2025-02-01T03:35:05.9823968Z [1m[32m       Fresh[0m pin-project v1.1.8
+2025-02-01T03:35:05.9825079Z [1m[32m       Fresh[0m httparse v1.10.0
+2025-02-01T03:35:05.9825798Z [1m[32m       Fresh[0m futures-channel v0.3.31
+2025-02-01T03:35:05.9826840Z [1m[32m       Fresh[0m async-trait v0.1.85
+2025-02-01T03:35:05.9827865Z [1m[32m       Fresh[0m memchr v2.7.4
+2025-02-01T03:35:05.9828941Z [1m[32m       Fresh[0m httpdate v1.0.3
+2025-02-01T03:35:05.9829791Z [1m[32m       Fresh[0m mime v0.3.17
+2025-02-01T03:35:05.9830843Z [1m[32m       Fresh[0m axum-core v0.3.4
+2025-02-01T03:35:05.9832963Z [1m[32m       Fresh[0m serde_json v1.0.138
+2025-02-01T03:35:05.9834653Z [1m[32m   Compiling[0m tower v0.4.13
+2025-02-01T03:35:05.9852341Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name tower --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tower-0.4.13/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="__common"' --cfg 'feature="default"' --cfg 'feature="futures-core"' --cfg 'feature="futures-util"' --cfg 'feature="log"' --cfg 'feature="make"' --cfg 'feature="pin-project"' --cfg 'feature="pin-project-lite"' --cfg 'feature="tokio"' --cfg 'feature="tracing"' --cfg 'feature="util"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__common", "balance", "buffer", "default", "discover", "filter", "full", "futures-core", "futures-util", "hdrhistogram", "hedge", "indexmap", "limit", "load", "load-shed", "log", "make", "pin-project", "pin-project-lite", "rand", "ready-cache", "reconnect", "retry", "slab", "spawn-ready", "steer", "timeout", "tokio", "tokio-stream", "tokio-util", "tracing", "util"))' -C metadata=0e554838e78a8ae5 -C extra-filename=-0e554838e78a8ae5 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern pin_project=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project-8b2b46177fc6bac9.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tower_layer=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_layer-c7702ed9e993fcea.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --extern tracing=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtracing-258e4a7dd62b4bfe.rmeta --cap-lints allow`
+2025-02-01T03:35:06.1642169Z [1m[32m   Compiling[0m h2 v0.3.26
+2025-02-01T03:35:06.1685560Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name h2 --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/h2-0.3.26/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("stream", "unstable"))' -C metadata=a46eab40ad75a543 -C extra-filename=-a46eab40ad75a543 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern fnv=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfnv-04c65f599b9418c8.rmeta --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_sink=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_sink-3f42e34907eff17f.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern indexmap=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libindexmap-99931f4b27da69dd.rmeta --extern slab=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libslab-3e9a05974b8e276a.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tokio_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio_util-61eb77cba1d039f3.rmeta --extern tracing=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtracing-258e4a7dd62b4bfe.rmeta --cap-lints allow`
+2025-02-01T03:35:06.2999439Z [1m[32m       Fresh[0m serde_urlencoded v0.7.1
+2025-02-01T03:35:06.3001771Z [1m[32m       Fresh[0m serde_path_to_error v0.1.16
+2025-02-01T03:35:06.3002375Z [1m[32m       Fresh[0m matchit v0.7.3
+2025-02-01T03:35:06.3002920Z [1m[32m       Fresh[0m sync_wrapper v0.1.2
+2025-02-01T03:35:06.3003463Z [1m[32m       Fresh[0m bitflags v1.3.2
+2025-02-01T03:35:08.3585489Z [1m[32m   Compiling[0m hyper v0.14.32
+2025-02-01T03:35:08.3618632Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name hyper --edition=2018 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/hyper-0.14.32/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="client"' --cfg 'feature="default"' --cfg 'feature="full"' --cfg 'feature="h2"' --cfg 'feature="http1"' --cfg 'feature="http2"' --cfg 'feature="runtime"' --cfg 'feature="server"' --cfg 'feature="socket2"' --cfg 'feature="stream"' --cfg 'feature="tcp"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__internal_happy_eyeballs_tests", "backports", "client", "default", "deprecated", "ffi", "full", "h2", "http1", "http2", "libc", "nightly", "runtime", "server", "socket2", "stream", "tcp"))' -C metadata=47654915d3343ed6 -C extra-filename=-47654915d3343ed6 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern futures_channel=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_channel-f2a515c489a547d0.rmeta --extern futures_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_core-23a10e0bf332e8f8.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern h2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libh2-a46eab40ad75a543.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern http_body=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp_body-be5a9966e533ac9f.rmeta --extern httparse=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttparse-17a928b2dce799e8.rmeta --extern httpdate=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttpdate-1d4d3b7ec5d730ed.rmeta --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern socket2=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsocket2-b45e08f047001ba3.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --extern tracing=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtracing-258e4a7dd62b4bfe.rmeta --extern want=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libwant-81c8b66dbf998e56.rmeta --cap-lints allow`
+2025-02-01T03:35:11.2116015Z [1m[32m   Compiling[0m axum v0.6.20
+2025-02-01T03:35:11.2169108Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name axum --edition=2021 /home/runner/.cargo/registry/src/index.crates.io-6f17d22bba15001f/axum-0.6.20/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="form"' --cfg 'feature="http1"' --cfg 'feature="json"' --cfg 'feature="matched-path"' --cfg 'feature="original-uri"' --cfg 'feature="query"' --cfg 'feature="tokio"' --cfg 'feature="tower-log"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("__private_docs", "default", "form", "headers", "http1", "http2", "json", "macros", "matched-path", "multipart", "original-uri", "query", "tokio", "tower-log", "tracing", "ws"))' -C metadata=cb0257475482011a -C extra-filename=-cb0257475482011a --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern async_trait=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libasync_trait-8d7515adcd639c6e.so --extern axum_core=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum_core-9294f34178c8e945.rmeta --extern bitflags=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbitflags-1ae6cbd7b946ebd3.rmeta --extern bytes=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libbytes-a9d71a2f6464ddc6.rmeta --extern futures_util=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libfutures_util-986ae311ca4c8bc0.rmeta --extern http=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp-77980583dc1a5938.rmeta --extern http_body=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhttp_body-be5a9966e533ac9f.rmeta --extern hyper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhyper-47654915d3343ed6.rmeta --extern itoa=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libitoa-e2c23b8eae4502dd.rmeta --extern matchit=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmatchit-3bae47f6324cf957.rmeta --extern memchr=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmemchr-d09f7be4d9a1578c.rmeta --extern mime=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmime-159552e04b01cc26.rmeta --extern percent_encoding=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpercent_encoding-ad71ecc825afcd5a.rmeta --extern pin_project_lite=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libpin_project_lite-20a2dd7d64defeb1.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --extern serde_json=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_json-dd842ac94a91db3e.rmeta --extern serde_path_to_error=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_path_to_error-538dee7e5a1afeed.rmeta --extern serde_urlencoded=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde_urlencoded-8d96bf63b1aa571c.rmeta --extern sync_wrapper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libsync_wrapper-8917e66f72f5631a.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta --extern tower=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower-0e554838e78a8ae5.rmeta --extern tower_layer=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_layer-c7702ed9e993fcea.rmeta --extern tower_service=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower_service-fde17096c5811931.rmeta --cap-lints allow`
+2025-02-01T03:35:13.8895590Z [1m[32m   Compiling[0m my_rust_app v0.1.0 (/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd)
+2025-02-01T03:35:13.8906618Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name my_rust_app --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=af2631aca88f08e3 -C extra-filename=-af2631aca88f08e3 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-cb0257475482011a.rmeta --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rmeta --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rmeta`
+2025-02-01T03:35:14.1729374Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name my_rust_app --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=6f673579b2886471 -C extra-filename=-6f673579b2886471 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-cb0257475482011a.rlib --extern hyper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhyper-47654915d3343ed6.rlib --extern my_rust_app=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmy_rust_app-af2631aca88f08e3.rlib --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rlib --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rlib --extern tower=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower-0e554838e78a8ae5.rlib`
+2025-02-01T03:35:14.1769994Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name my_rust_app --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=df06c53ebeb72377 -C extra-filename=-df06c53ebeb72377 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-cb0257475482011a.rlib --extern my_rust_app=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmy_rust_app-af2631aca88f08e3.rlib --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rlib --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rlib`
+2025-02-01T03:35:14.2054008Z [0m[1m[33mwarning[0m[0m[1m: found module declaration for lib.rs[0m
+2025-02-01T03:35:14.2054972Z [0m [0m[0m[1m[38;5;12m--> [0m[0msrc/main.rs:6:1[0m
+2025-02-01T03:35:14.2055659Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:14.2056366Z [0m[1m[38;5;12m6[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mmod lib;[0m
+2025-02-01T03:35:14.2057314Z [0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[33m^^^^^^^^[0m
+2025-02-01T03:35:14.2057975Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:14.2058794Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: lib.rs is the root of this crate's library target[0m
+2025-02-01T03:35:14.2060220Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: to refer to it from other targets, use the library's name as the path[0m
+2025-02-01T03:35:14.2061439Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(special_module_name)]` on by default[0m
+2025-02-01T03:35:14.2062059Z 
+2025-02-01T03:35:14.2063790Z [0m[1m[33mwarning[0m[0m[1m: unused import: `serde::Serialize`[0m
+2025-02-01T03:35:14.2064522Z [0m [0m[0m[1m[38;5;12m--> [0m[0msrc/main.rs:2:5[0m
+2025-02-01T03:35:14.2065175Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:14.2065886Z [0m[1m[38;5;12m2[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse serde::Serialize;[0m
+2025-02-01T03:35:14.2066738Z [0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[33m^^^^^^^^^^^^^^^^[0m
+2025-02-01T03:35:14.2067582Z [0m  [0m[0m[1m[38;5;12m|[0m
+2025-02-01T03:35:14.2068339Z [0m  [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `#[warn(unused_imports)]` on by default[0m
+2025-02-01T03:35:14.2068886Z 
+2025-02-01T03:35:14.4697819Z [1m[33mwarning[0m[1m:[0m `my_rust_app` (bin "my_rust_app" test) generated 2 warnings (run `cargo fix --bin "my_rust_app" --tests` to apply 1 suggestion)
+2025-02-01T03:35:14.4717300Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name my_rust_app --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=ee0b590a51f12af6 -C extra-filename=-ee0b590a51f12af6 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-cb0257475482011a.rlib --extern hyper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhyper-47654915d3343ed6.rlib --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rlib --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rlib --extern tower=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower-0e554838e78a8ae5.rlib`
+2025-02-01T03:35:14.6862190Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name test --edition=2021 tests/test.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=ccbefa2d25fffdc1 -C extra-filename=-ccbefa2d25fffdc1 --out-dir /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-cb0257475482011a.rlib --extern hyper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhyper-47654915d3343ed6.rlib --extern my_rust_app=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmy_rust_app-af2631aca88f08e3.rlib --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rlib --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rlib --extern tower=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower-0e554838e78a8ae5.rlib`
+2025-02-01T03:35:17.4328792Z [1m[33mwarning[0m[1m:[0m `my_rust_app` (bin "my_rust_app") generated 2 warnings (2 duplicates)
+2025-02-01T03:35:17.4331633Z [1m[32m    Finished[0m `test` profile [unoptimized + debuginfo] target(s) in 12.53s
+2025-02-01T03:35:17.4406656Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/my_rust_app-ee0b590a51f12af6`
+2025-02-01T03:35:17.4427487Z 
+2025-02-01T03:35:17.4428781Z running 0 tests
+2025-02-01T03:35:17.4430060Z 
+2025-02-01T03:35:17.4431551Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-02-01T03:35:17.4433261Z 
+2025-02-01T03:35:17.4436705Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/my_rust_app-6f673579b2886471`
+2025-02-01T03:35:17.4457768Z [1m[32m     Running[0m `/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/test-ccbefa2d25fffdc1`
+2025-02-01T03:35:17.4476333Z 
+2025-02-01T03:35:17.4477828Z running 0 tests
+2025-02-01T03:35:17.4479166Z 
+2025-02-01T03:35:17.4480730Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-02-01T03:35:17.4491369Z 
+2025-02-01T03:35:17.4491519Z 
+2025-02-01T03:35:17.4491784Z running 4 tests
+2025-02-01T03:35:17.4493880Z test tests::test_default_route ... ok
+2025-02-01T03:35:17.4502117Z test tests::test_greet ... ok
+2025-02-01T03:35:17.4506683Z test tests::test_greet_empty ... ok
+2025-02-01T03:35:17.4524231Z [1m[32m   Doc-tests[0m my_rust_app
+2025-02-01T03:35:17.4524739Z test tests::test_greet_special_chars ... ok
+2025-02-01T03:35:17.4526397Z 
+2025-02-01T03:35:17.4539096Z [1m[32m     Running[0m `/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustdoc --edition=2021 --crate-type lib --color always --crate-name my_rust_app --test src/lib.rs --test-run-directory /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps -L dependency=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps --extern axum=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libaxum-cb0257475482011a.rlib --extern hyper=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libhyper-47654915d3343ed6.rlib --extern my_rust_app=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libmy_rust_app-af2631aca88f08e3.rlib --extern serde=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libserde-d8fa30bff9dadefd.rlib --extern tokio=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtokio-f40cabf853e23eb6.rlib --extern tower=/home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd/target/debug/deps/libtower-0e554838e78a8ae5.rlib -C embed-bitcode=no --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' --error-format human`
+2025-02-01T03:35:17.4547592Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2025-02-01T03:35:17.4548345Z 
+2025-02-01T03:35:17.4709112Z 
+2025-02-01T03:35:17.4709965Z running 1 test
+2025-02-01T03:35:17.5833512Z test src/lib.rs - greet (line 13) ... ok
+2025-02-01T03:35:17.5834878Z 
+2025-02-01T03:35:17.5835287Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+2025-02-01T03:35:17.5835820Z 
+2025-02-01T03:35:17.5930879Z ##[group]Run docker build -t my_rust_app .
+2025-02-01T03:35:17.5931467Z [36;1mdocker build -t my_rust_app .[0m
+2025-02-01T03:35:17.5961010Z shell: /usr/bin/bash -e {0}
+2025-02-01T03:35:17.5961247Z env:
+2025-02-01T03:35:17.5961419Z   CARGO_TERM_COLOR: always
+2025-02-01T03:35:17.5961646Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:35:17.5961869Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:35:17.5962062Z ##[endgroup]
+2025-02-01T03:35:18.1913803Z #0 building with "default" instance using docker driver
+2025-02-01T03:35:18.1914287Z 
+2025-02-01T03:35:18.1915486Z #1 [internal] load build definition from Dockerfile
+2025-02-01T03:35:18.1917770Z #1 transferring dockerfile: 803B done
+2025-02-01T03:35:18.1918318Z #1 DONE 0.0s
+2025-02-01T03:35:18.1918507Z 
+2025-02-01T03:35:18.1918767Z #2 [auth] library/ubuntu:pull token for registry-1.docker.io
+2025-02-01T03:35:18.3417558Z #2 DONE 0.0s
+2025-02-01T03:35:18.3417861Z 
+2025-02-01T03:35:18.3418265Z #3 [auth] library/rust:pull token for registry-1.docker.io
+2025-02-01T03:35:18.3418611Z #3 DONE 0.0s
+2025-02-01T03:35:18.3418726Z 
+2025-02-01T03:35:18.3419045Z #4 [internal] load metadata for docker.io/library/ubuntu:22.04
+2025-02-01T03:35:18.6501806Z #4 DONE 0.6s
+2025-02-01T03:35:18.6502435Z 
+2025-02-01T03:35:18.6502887Z #5 [internal] load metadata for docker.io/library/rust:latest
+2025-02-01T03:35:18.7941084Z #5 DONE 0.6s
+2025-02-01T03:35:18.7941854Z 
+2025-02-01T03:35:18.7942273Z #6 [internal] load .dockerignore
+2025-02-01T03:35:18.7944664Z #6 transferring context: 2B done
+2025-02-01T03:35:18.7945890Z #6 DONE 0.0s
+2025-02-01T03:35:18.7946861Z 
+2025-02-01T03:35:18.7947856Z #7 [builder 1/6] FROM docker.io/library/rust:latest@sha256:efe14eee1be3fd2462fe349b5948b0d1b179b421c9fb23acb20b579f59299daf
+2025-02-01T03:35:18.7949261Z #7 resolve docker.io/library/rust:latest@sha256:efe14eee1be3fd2462fe349b5948b0d1b179b421c9fb23acb20b579f59299daf 0.0s done
+2025-02-01T03:35:18.7950584Z #7 sha256:efe14eee1be3fd2462fe349b5948b0d1b179b421c9fb23acb20b579f59299daf 7.75kB / 7.75kB done
+2025-02-01T03:35:18.7952008Z #7 sha256:d6ffb8c473118907af9c82d36eea7be73220fc86ed49e19e598368093d225124 1.94kB / 1.94kB done
+2025-02-01T03:35:18.7953078Z #7 sha256:e14ab37a2b4852c1ba2d6d366516e227688c72b84d99c788d23988ea95769eca 4.36kB / 4.36kB done
+2025-02-01T03:35:18.7954121Z #7 sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a 0B / 48.48MB 0.1s
+2025-02-01T03:35:18.7955184Z #7 sha256:bf571be90f05e10949e4ae13071c81d3182077d926e3f84169a12e0ce2aec209 0B / 24.06MB 0.1s
+2025-02-01T03:35:18.8945546Z #7 sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a 8.39MB / 48.48MB 0.2s
+2025-02-01T03:35:18.9999090Z #7 sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a 25.17MB / 48.48MB 0.3s
+2025-02-01T03:35:19.0021277Z #7 sha256:bf571be90f05e10949e4ae13071c81d3182077d926e3f84169a12e0ce2aec209 4.19MB / 24.06MB 0.3s
+2025-02-01T03:35:19.1168800Z #7 sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a 43.22MB / 48.48MB 0.4s
+2025-02-01T03:35:19.1172936Z #7 sha256:bf571be90f05e10949e4ae13071c81d3182077d926e3f84169a12e0ce2aec209 16.78MB / 24.06MB 0.4s
+2025-02-01T03:35:19.1176128Z #7 sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 0B / 64.40MB 0.4s
+2025-02-01T03:35:19.2253761Z #7 sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a 48.48MB / 48.48MB 0.5s done
+2025-02-01T03:35:19.2265529Z #7 sha256:bf571be90f05e10949e4ae13071c81d3182077d926e3f84169a12e0ce2aec209 24.06MB / 24.06MB 0.5s
+2025-02-01T03:35:19.3863126Z #7 sha256:bf571be90f05e10949e4ae13071c81d3182077d926e3f84169a12e0ce2aec209 24.06MB / 24.06MB 0.5s done
+2025-02-01T03:35:19.3864352Z #7 sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 20.97MB / 64.40MB 0.6s
+2025-02-01T03:35:19.3865934Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 1.31MB / 211.33MB 0.6s
+2025-02-01T03:35:19.3867556Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 0B / 194.94MB 0.6s
+2025-02-01T03:35:19.3868968Z #7 extracting sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a
+2025-02-01T03:35:19.4921971Z #7 sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 47.19MB / 64.40MB 0.8s
+2025-02-01T03:35:19.4930688Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 27.26MB / 211.33MB 0.8s
+2025-02-01T03:35:19.4931815Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 10.49MB / 194.94MB 0.8s
+2025-02-01T03:35:19.5927757Z #7 sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 61.87MB / 64.40MB 0.9s
+2025-02-01T03:35:19.5938669Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 39.85MB / 211.33MB 0.9s
+2025-02-01T03:35:19.6972890Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 52.43MB / 211.33MB 1.0s
+2025-02-01T03:35:19.6974209Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 32.62MB / 194.94MB 1.0s
+2025-02-01T03:35:19.7985357Z #7 sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 64.40MB / 64.40MB 1.0s done
+2025-02-01T03:35:19.7987161Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 65.43MB / 211.33MB 1.1s
+2025-02-01T03:35:19.7989989Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 44.04MB / 194.94MB 1.1s
+2025-02-01T03:35:19.9027980Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 78.64MB / 211.33MB 1.2s
+2025-02-01T03:35:19.9029305Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 55.57MB / 194.94MB 1.2s
+2025-02-01T03:35:20.3032007Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 97.52MB / 211.33MB 1.6s
+2025-02-01T03:35:20.3033234Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 69.21MB / 194.94MB 1.6s
+2025-02-01T03:35:20.4258413Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 112.20MB / 211.33MB 1.7s
+2025-02-01T03:35:20.4260023Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 81.79MB / 194.94MB 1.7s
+2025-02-01T03:35:20.5587493Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 125.83MB / 211.33MB 1.8s
+2025-02-01T03:35:20.5589463Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 92.27MB / 194.94MB 1.8s
+2025-02-01T03:35:20.6882469Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 141.56MB / 211.33MB 1.9s
+2025-02-01T03:35:20.6884337Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 110.10MB / 194.94MB 1.9s
+2025-02-01T03:35:20.7922671Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 172.53MB / 211.33MB 2.1s
+2025-02-01T03:35:20.7929105Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 140.51MB / 194.94MB 2.1s
+2025-02-01T03:35:20.9058015Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 186.65MB / 211.33MB 2.2s
+2025-02-01T03:35:20.9060924Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 160.43MB / 194.94MB 2.2s
+2025-02-01T03:35:21.0527692Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 201.33MB / 211.33MB 2.3s
+2025-02-01T03:35:21.1559323Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 179.31MB / 194.94MB 2.4s
+2025-02-01T03:35:21.2574402Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 194.94MB / 194.94MB 2.5s
+2025-02-01T03:35:22.3091130Z #7 sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 211.33MB / 211.33MB 3.4s done
+2025-02-01T03:35:23.1885141Z #7 sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 194.94MB / 194.94MB 4.4s done
+2025-02-01T03:35:23.6925369Z #7 ...
+2025-02-01T03:35:23.6925557Z 
+2025-02-01T03:35:23.6926166Z #8 [runtime 1/3] FROM docker.io/library/ubuntu:22.04@sha256:0e5e4a57c2499249aafc3b40fcd541e9a456aab7296681a3994d631587203f97
+2025-02-01T03:35:23.6927916Z #8 resolve docker.io/library/ubuntu:22.04@sha256:0e5e4a57c2499249aafc3b40fcd541e9a456aab7296681a3994d631587203f97 done
+2025-02-01T03:35:23.6929119Z #8 sha256:0e5e4a57c2499249aafc3b40fcd541e9a456aab7296681a3994d631587203f97 6.69kB / 6.69kB done
+2025-02-01T03:35:23.6930130Z #8 sha256:3d1556a8a18cf5307b121e0a98e93f1ddf1f3f8e092f1fddfd941254785b95d7 424B / 424B done
+2025-02-01T03:35:23.6931150Z #8 sha256:97271d29cb7956f0908cfb1449610a2cd9cb46b004ac8af25f0255663eb364ba 2.30kB / 2.30kB done
+2025-02-01T03:35:23.6932229Z #8 sha256:6414378b647780fee8fd903ddb9541d134a1947ce092d08bdeb23a54cb3684ac 29.54MB / 29.54MB 0.3s done
+2025-02-01T03:35:23.6933294Z #8 extracting sha256:6414378b647780fee8fd903ddb9541d134a1947ce092d08bdeb23a54cb3684ac 4.4s done
+2025-02-01T03:35:23.6933996Z #8 DONE 4.9s
+2025-02-01T03:35:23.6934162Z 
+2025-02-01T03:35:23.6934761Z #7 [builder 1/6] FROM docker.io/library/rust:latest@sha256:efe14eee1be3fd2462fe349b5948b0d1b179b421c9fb23acb20b579f59299daf
+2025-02-01T03:35:23.6935615Z #7 ...
+2025-02-01T03:35:23.6935753Z 
+2025-02-01T03:35:23.6935957Z #9 [runtime 2/3] RUN apt update && apt install -y libc6
+2025-02-01T03:35:23.9939963Z #9 ...
+2025-02-01T03:35:23.9940155Z 
+2025-02-01T03:35:23.9940300Z #10 [internal] load build context
+2025-02-01T03:35:23.9940752Z #10 transferring context: 398.45MB 5.1s done
+2025-02-01T03:35:23.9941183Z #10 DONE 5.2s
+2025-02-01T03:35:23.9941349Z 
+2025-02-01T03:35:23.9941572Z #9 [runtime 2/3] RUN apt update && apt install -y libc6
+2025-02-01T03:35:23.9942062Z #9 0.384 
+2025-02-01T03:35:23.9942569Z #9 0.384 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+2025-02-01T03:35:23.9943192Z #9 0.384 
+2025-02-01T03:35:24.2730463Z #9 0.563 Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2025-02-01T03:35:24.4264130Z #9 0.678 Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+2025-02-01T03:35:24.6278746Z #9 0.868 Get:3 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1229 kB]
+2025-02-01T03:35:24.6919739Z #9 1.083 Get:4 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [45.2 kB]
+2025-02-01T03:35:24.7968120Z #9 1.084 Get:5 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [3606 kB]
+2025-02-01T03:35:24.7969664Z #9 1.186 Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2604 kB]
+2025-02-01T03:35:24.9135328Z #9 1.273 Get:7 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2025-02-01T03:35:25.0273440Z #9 1.419 Get:8 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2025-02-01T03:35:25.1760135Z #9 1.567 Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+2025-02-01T03:35:25.6043200Z #9 1.925 Get:10 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+2025-02-01T03:35:26.1745388Z #9 2.566 Get:11 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+2025-02-01T03:35:26.1748288Z #9 2.566 Get:12 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+2025-02-01T03:35:26.2959218Z #9 2.663 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3742 kB]
+2025-02-01T03:35:26.2961332Z #9 2.686 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1521 kB]
+2025-02-01T03:35:26.4018758Z #9 2.793 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2904 kB]
+2025-02-01T03:35:26.5290042Z #9 2.919 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [53.3 kB]
+2025-02-01T03:35:26.6841234Z #9 2.922 Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.2 kB]
+2025-02-01T03:35:26.6844845Z #9 2.925 Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [81.4 kB]
+2025-02-01T03:35:27.1970280Z #9 3.588 Fetched 36.2 MB in 3s (11.4 MB/s)
+2025-02-01T03:35:27.9030463Z #9 3.588 Reading package lists...
+2025-02-01T03:35:28.0387905Z #9 4.303 Building dependency tree...
+2025-02-01T03:35:28.0388785Z #9 4.430 Reading state information...
+2025-02-01T03:35:28.2365450Z #9 4.441 4 packages can be upgraded. Run 'apt list --upgradable' to see them.
+2025-02-01T03:35:28.2368292Z #9 4.446 
+2025-02-01T03:35:28.2368828Z #9 4.446 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+2025-02-01T03:35:28.2369460Z #9 4.446 
+2025-02-01T03:35:28.8444430Z #9 4.477 Reading package lists...
+2025-02-01T03:35:28.9851558Z #9 5.245 Building dependency tree...
+2025-02-01T03:35:28.9852207Z #9 5.376 Reading state information...
+2025-02-01T03:35:29.1425646Z #9 5.534 libc6 is already the newest version (2.35-0ubuntu3.8).
+2025-02-01T03:35:29.1426415Z #9 5.534 0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+2025-02-01T03:35:29.2794692Z #9 DONE 5.6s
+2025-02-01T03:35:29.2796676Z 
+2025-02-01T03:35:29.2798214Z #7 [builder 1/6] FROM docker.io/library/rust:latest@sha256:efe14eee1be3fd2462fe349b5948b0d1b179b421c9fb23acb20b579f59299daf
+2025-02-01T03:35:29.2799550Z #7 extracting sha256:fd0410a2d1aece5360035b61b0a60d8d6ce56badb9d30a5c86113b3ec724f72a 5.6s done
+2025-02-01T03:35:29.2800491Z #7 extracting sha256:bf571be90f05e10949e4ae13071c81d3182077d926e3f84169a12e0ce2aec209 0.8s done
+2025-02-01T03:35:29.2801077Z #7 extracting sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 0.2s
+2025-02-01T03:35:31.6612201Z #7 extracting sha256:684a51896c8291a1769034cf6e10971c82a82c43b6b4588d1c71d215953eaa61 2.4s done
+2025-02-01T03:35:32.2479316Z #7 extracting sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3
+2025-02-01T03:35:37.3525740Z #7 extracting sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 5.1s
+2025-02-01T03:35:38.2426297Z #7 extracting sha256:fbf93b646d6b4d6612a25d50599f4d8e3c7785f83c6ba085219f9d4d334e8aa3 5.8s done
+2025-02-01T03:35:40.5928869Z #7 extracting sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a
+2025-02-01T03:35:43.6306136Z #7 extracting sha256:2d1bc9b6ae46247afd5d8d1c031d2892c5210d0a1988a7aa81e62b333048122a 2.9s done
+2025-02-01T03:35:45.8693854Z #7 DONE 27.2s
+2025-02-01T03:35:46.0289672Z 
+2025-02-01T03:35:46.0291882Z #11 [builder 2/6] WORKDIR /app
+2025-02-01T03:35:46.0293488Z #11 DONE 0.0s
+2025-02-01T03:35:46.0293674Z 
+2025-02-01T03:35:46.0293809Z #12 [builder 3/6] COPY . .
+2025-02-01T03:35:47.9441814Z #12 DONE 2.1s
+2025-02-01T03:35:48.0869039Z 
+2025-02-01T03:35:48.0874754Z #13 [builder 4/6] RUN ls -al /app && cat /app/Cargo.toml
+2025-02-01T03:35:48.0876675Z #13 0.142 total 64
+2025-02-01T03:35:48.0877250Z #13 0.142 drwxr-xr-x 1 root root  4096 Feb  1 03:35 .
+2025-02-01T03:35:48.0877774Z #13 0.142 drwxr-xr-x 1 root root  4096 Feb  1 03:35 ..
+2025-02-01T03:35:48.0878287Z #13 0.142 drwxr-xr-x 7 root root  4096 Feb  1 03:34 .git
+2025-02-01T03:35:48.0879938Z #13 0.142 drwxr-xr-x 3 root root  4096 Feb  1 03:34 .github
+2025-02-01T03:35:48.0880510Z #13 0.142 -rw-r--r-- 1 root root    16 Feb  1 03:34 .gitignore
+2025-02-01T03:35:48.0881074Z #13 0.142 -rw-r--r-- 1 root root 20175 Feb  1 03:34 Cargo.lock
+2025-02-01T03:35:48.0881672Z #13 0.142 -rw-r--r-- 1 root root   394 Feb  1 03:34 Cargo.toml
+2025-02-01T03:35:48.0882234Z #13 0.142 -rw-r--r-- 1 root root   764 Feb  1 03:34 Dockerfile
+2025-02-01T03:35:48.0882757Z #13 0.142 -rw-r--r-- 1 root root  2634 Feb  1 03:34 README.md
+2025-02-01T03:35:48.0883280Z #13 0.142 drwxr-xr-x 2 root root  4096 Feb  1 03:34 src
+2025-02-01T03:35:48.0883800Z #13 0.142 drwxr-xr-x 4 root root  4096 Feb  1 03:35 target
+2025-02-01T03:35:48.0884336Z #13 0.142 drwxr-xr-x 2 root root  4096 Feb  1 03:34 tests
+2025-02-01T03:35:48.2603954Z #13 0.144 [package]
+2025-02-01T03:35:48.2605592Z #13 0.144 name = "my_rust_app"
+2025-02-01T03:35:48.2605943Z #13 0.144 version = "0.1.0"
+2025-02-01T03:35:48.2606237Z #13 0.144 edition = "2021"
+2025-02-01T03:35:48.2606521Z #13 0.144 
+2025-02-01T03:35:48.2606824Z #13 0.144 # Define a binary target (this is required)
+2025-02-01T03:35:48.2609649Z #13 0.144 [[bin]]
+2025-02-01T03:35:48.2609920Z #13 0.144 name = "my_rust_app"
+2025-02-01T03:35:48.2610237Z #13 0.144 path = "src/main.rs"
+2025-02-01T03:35:48.2610836Z #13 0.144 
+2025-02-01T03:35:48.2611126Z #13 0.144 [dependencies]
+2025-02-01T03:35:48.2611410Z #13 0.144 axum = "0.6"
+2025-02-01T03:35:48.2611733Z #13 0.144 tokio = { version = "1", features = ["full"] }
+2025-02-01T03:35:48.2612188Z #13 0.144 serde = { version = "1", features = ["derive"] }
+2025-02-01T03:35:48.2612591Z #13 0.144 
+2025-02-01T03:35:48.2612883Z #13 0.144 [dev-dependencies]  # Add these for testing
+2025-02-01T03:35:48.2613261Z #13 0.144 tower = "0.4"
+2025-02-01T03:35:48.2613622Z #13 0.144 hyper = { version = "0.14", features = ["full"] }
+2025-02-01T03:35:48.2614020Z #13 DONE 0.2s
+2025-02-01T03:35:48.2614177Z 
+2025-02-01T03:35:48.2614297Z #14 [builder 5/6] RUN cargo fetch
+2025-02-01T03:35:48.3141121Z #14 0.204     Updating crates.io index
+2025-02-01T03:35:48.7127801Z #14 0.603  Downloading crates ...
+2025-02-01T03:35:48.8230736Z #14 0.714   Downloaded tower-service v0.3.3
+2025-02-01T03:35:48.9251472Z #14 0.726   Downloaded tower-layer v0.3.3
+2025-02-01T03:35:48.9252185Z #14 0.736   Downloaded pin-project-lite v0.2.16
+2025-02-01T03:35:48.9253527Z #14 0.747   Downloaded once_cell v1.20.2
+2025-02-01T03:35:48.9254243Z #14 0.752   Downloaded log v0.4.25
+2025-02-01T03:35:48.9254789Z #14 0.763   Downloaded futures-task v0.3.31
+2025-02-01T03:35:48.9255219Z #14 0.766   Downloaded mime v0.3.17
+2025-02-01T03:35:48.9255617Z #14 0.769   Downloaded sync_wrapper v0.1.2
+2025-02-01T03:35:48.9256039Z #14 0.771   Downloaded bitflags v1.3.2
+2025-02-01T03:35:48.9256448Z #14 0.779   Downloaded axum-core v0.3.4
+2025-02-01T03:35:48.9256876Z #14 0.784   Downloaded futures-channel v0.3.31
+2025-02-01T03:35:48.9257624Z #14 0.788   Downloaded ryu v1.0.19
+2025-02-01T03:35:48.9258054Z #14 0.796   Downloaded async-trait v0.1.85
+2025-02-01T03:35:48.9258488Z #14 0.803   Downloaded indexmap v2.7.1
+2025-02-01T03:35:48.9258932Z #14 0.811   Downloaded miniz_oxide v0.8.3
+2025-02-01T03:35:48.9259376Z #14 0.815   Downloaded tokio-util v0.7.13
+2025-02-01T03:35:49.0288109Z #14 0.828   Downloaded axum v0.6.20
+2025-02-01T03:35:49.0288674Z #14 0.844   Downloaded serde_json v1.0.138
+2025-02-01T03:35:49.0289427Z #14 0.856   Downloaded h2 v0.3.26
+2025-02-01T03:35:49.0289836Z #14 0.867   Downloaded hyper v0.14.32
+2025-02-01T03:35:49.0290273Z #14 0.879   Downloaded futures-util v0.3.31
+2025-02-01T03:35:49.0290734Z #14 0.900   Downloaded hashbrown v0.15.2
+2025-02-01T03:35:49.0291153Z #14 0.908   Downloaded gimli v0.31.1
+2025-02-01T03:35:49.0291573Z #14 0.919   Downloaded backtrace v0.3.74
+2025-02-01T03:35:49.1350916Z #14 0.928   Downloaded mio v1.0.3
+2025-02-01T03:35:49.1351420Z #14 0.938   Downloaded object v0.36.7
+2025-02-01T03:35:49.1351835Z #14 0.955   Downloaded syn v2.0.96
+2025-02-01T03:35:49.1352245Z #14 0.972   Downloaded http v0.2.12
+2025-02-01T03:35:49.1352668Z #14 0.978   Downloaded httparse v1.10.0
+2025-02-01T03:35:49.1353115Z #14 0.982   Downloaded serde_derive v1.0.217
+2025-02-01T03:35:49.1353571Z #14 0.986   Downloaded memchr v2.7.4
+2025-02-01T03:35:49.1353979Z #14 0.995   Downloaded tracing v0.1.41
+2025-02-01T03:35:49.1354476Z #14 1.001   Downloaded windows_aarch64_gnullvm v0.52.6
+2025-02-01T03:35:49.1355021Z #14 1.013   Downloaded windows_i686_gnullvm v0.52.6
+2025-02-01T03:35:49.1355537Z #14 1.026   Downloaded windows_x86_64_gnullvm v0.52.6
+2025-02-01T03:35:49.2355884Z #14 1.037   Downloaded tower v0.4.13
+2025-02-01T03:35:49.2356489Z #14 1.054   Downloaded serde v1.0.217
+2025-02-01T03:35:49.2356927Z #14 1.059   Downloaded bytes v1.9.0
+2025-02-01T03:35:49.2357549Z #14 1.065   Downloaded pin-project v1.1.8
+2025-02-01T03:35:49.2358008Z #14 1.087   Downloaded redox_syscall v0.5.8
+2025-02-01T03:35:49.2358446Z #14 1.091   Downloaded socket2 v0.5.8
+2025-02-01T03:35:49.2358874Z #14 1.094   Downloaded proc-macro2 v1.0.93
+2025-02-01T03:35:49.2359329Z #14 1.098   Downloaded unicode-ident v1.0.16
+2025-02-01T03:35:49.2359826Z #14 1.103   Downloaded pin-project-internal v1.1.8
+2025-02-01T03:35:49.2360311Z #14 1.105   Downloaded addr2line v0.24.2
+2025-02-01T03:35:49.2360722Z #14 1.109   Downloaded adler2 v2.0.0
+2025-02-01T03:35:49.2361373Z #14 1.111   Downloaded lock_api v0.4.12
+2025-02-01T03:35:49.2361839Z #14 1.113   Downloaded cfg-if v1.0.0
+2025-02-01T03:35:49.2362255Z #14 1.116   Downloaded bitflags v2.8.0
+2025-02-01T03:35:49.2362671Z #14 1.122   Downloaded smallvec v1.13.2
+2025-02-01T03:35:49.2363091Z #14 1.126   Downloaded tokio v1.43.0
+2025-02-01T03:35:49.3418618Z #14 1.192   Downloaded libc v0.2.169
+2025-02-01T03:35:49.3421418Z #14 1.232   Downloaded windows_i686_gnu v0.52.6
+2025-02-01T03:35:49.4461927Z #14 1.262   Downloaded parking_lot v0.12.3
+2025-02-01T03:35:49.4462517Z #14 1.266   Downloaded windows_i686_msvc v0.52.6
+2025-02-01T03:35:49.4463021Z #14 1.285   Downloaded windows_x86_64_msvc v0.52.6
+2025-02-01T03:35:49.4463485Z #14 1.302   Downloaded quote v1.0.38
+2025-02-01T03:35:49.4463946Z #14 1.306   Downloaded windows_x86_64_gnu v0.52.6
+2025-02-01T03:35:49.4464445Z #14 1.332   Downloaded tracing-core v0.1.33
+2025-02-01T03:35:49.4464891Z #14 1.336   Downloaded matchit v0.7.3
+2025-02-01T03:35:49.6682622Z #14 1.340   Downloaded rustversion v1.0.19
+2025-02-01T03:35:49.6683895Z #14 1.344   Downloaded serde_path_to_error v0.1.16
+2025-02-01T03:35:49.6685055Z #14 1.347   Downloaded form_urlencoded v1.2.1
+2025-02-01T03:35:49.6685646Z #14 1.348   Downloaded equivalent v1.0.1
+2025-02-01T03:35:49.6686109Z #14 1.349   Downloaded futures-sink v0.3.31
+2025-02-01T03:35:49.6686548Z #14 1.351   Downloaded httpdate v1.0.3
+2025-02-01T03:35:49.6687183Z #14 1.353   Downloaded itoa v1.0.14
+2025-02-01T03:35:49.6687610Z #14 1.355   Downloaded pin-utils v0.1.0
+2025-02-01T03:35:49.6689004Z #14 1.357   Downloaded rustc-demangle v0.1.24
+2025-02-01T03:35:49.6689743Z #14 1.359   Downloaded wasi v0.11.0+wasi-snapshot-preview1
+2025-02-01T03:35:49.6690480Z #14 1.362   Downloaded parking_lot_core v0.9.10
+2025-02-01T03:35:49.6691146Z #14 1.365   Downloaded percent-encoding v2.3.1
+2025-02-01T03:35:49.6691605Z #14 1.366   Downloaded try-lock v0.2.5
+2025-02-01T03:35:49.6692215Z #14 1.368   Downloaded windows_aarch64_msvc v0.52.6
+2025-02-01T03:35:49.6692726Z #14 1.385   Downloaded autocfg v1.4.0
+2025-02-01T03:35:49.6693440Z #14 1.388   Downloaded slab v0.4.9
+2025-02-01T03:35:49.6694479Z #14 1.390   Downloaded want v0.3.1
+2025-02-01T03:35:49.6695109Z #14 1.392   Downloaded windows-targets v0.52.6
+2025-02-01T03:35:49.6695533Z #14 1.393   Downloaded serde_urlencoded v0.7.1
+2025-02-01T03:35:49.6695995Z #14 1.395   Downloaded fnv v1.0.7
+2025-02-01T03:35:49.6696235Z #14 1.397   Downloaded http-body v0.4.6
+2025-02-01T03:35:49.6697399Z #14 1.400   Downloaded futures-core v0.3.31
+2025-02-01T03:35:49.6697864Z #14 1.402   Downloaded scopeguard v1.2.0
+2025-02-01T03:35:49.6698476Z #14 1.403   Downloaded signal-hook-registry v1.4.2
+2025-02-01T03:35:49.6698962Z #14 1.405   Downloaded tokio-macros v2.5.0
+2025-02-01T03:35:49.6699402Z #14 1.408   Downloaded windows-sys v0.52.0
+2025-02-01T03:35:50.1262479Z #14 DONE 2.0s
+2025-02-01T03:35:50.2775431Z 
+2025-02-01T03:35:50.2775977Z #15 [builder 6/6] RUN cargo build --release
+2025-02-01T03:35:50.3549554Z #15 0.227    Compiling proc-macro2 v1.0.93
+2025-02-01T03:35:50.3550477Z #15 0.227    Compiling unicode-ident v1.0.16
+2025-02-01T03:35:50.5663834Z #15 0.288    Compiling libc v0.2.169
+2025-02-01T03:35:51.2508006Z #15 1.124    Compiling quote v1.0.38
+2025-02-01T03:35:51.4787184Z #15 1.208    Compiling autocfg v1.4.0
+2025-02-01T03:35:51.6317929Z #15 1.351    Compiling syn v2.0.96
+2025-02-01T03:35:51.8519773Z #15 1.534    Compiling pin-project-lite v0.2.16
+2025-02-01T03:35:51.8521329Z #15 1.574    Compiling rustversion v1.0.19
+2025-02-01T03:35:52.0492473Z #15 1.820    Compiling itoa v1.0.14
+2025-02-01T03:35:52.2010164Z #15 1.922    Compiling lock_api v0.4.12
+2025-02-01T03:35:52.2020938Z #15 2.074    Compiling bytes v1.9.0
+2025-02-01T03:35:53.2344009Z #15 2.956    Compiling parking_lot_core v0.9.10
+2025-02-01T03:35:53.9368477Z #15 3.630    Compiling cfg-if v1.0.0
+2025-02-01T03:35:53.9370373Z #15 3.659    Compiling smallvec v1.13.2
+2025-02-01T03:35:54.1774705Z #15 3.856    Compiling scopeguard v1.2.0
+2025-02-01T03:35:54.1776175Z #15 3.900    Compiling serde v1.0.217
+2025-02-01T03:35:54.3768299Z #15 4.099    Compiling futures-core v0.3.31
+2025-02-01T03:35:54.9909135Z #15 4.696    Compiling fnv v1.0.7
+2025-02-01T03:35:54.9910695Z #15 4.737    Compiling pin-utils v0.1.0
+2025-02-01T03:35:54.9911183Z #15 4.767    Compiling futures-task v0.3.31
+2025-02-01T03:35:55.1419256Z #15 4.862    Compiling once_cell v1.20.2
+2025-02-01T03:35:55.3179511Z #15 5.038    Compiling tracing-core v0.1.33
+2025-02-01T03:35:55.9992722Z #15 5.721    Compiling serde_derive v1.0.217
+2025-02-01T03:35:56.3463661Z #15 6.068    Compiling tokio-macros v2.5.0
+2025-02-01T03:35:57.0913429Z #15 6.813    Compiling futures-util v0.3.31
+2025-02-01T03:35:58.9269286Z #15 8.649    Compiling http v0.2.12
+2025-02-01T03:36:00.9522056Z #15 10.82    Compiling parking_lot v0.12.3
+2025-02-01T03:36:02.0988494Z #15 11.82    Compiling signal-hook-registry v1.4.2
+2025-02-01T03:36:02.2634690Z #15 12.14    Compiling mio v1.0.3
+2025-02-01T03:36:02.6272834Z #15 12.50    Compiling socket2 v0.5.8
+2025-02-01T03:36:03.1840816Z #15 12.87    Compiling tower-service v0.3.3
+2025-02-01T03:36:03.1841412Z #15 12.91    Compiling httparse v1.10.0
+2025-02-01T03:36:03.2958792Z #15 13.17    Compiling log v0.4.25
+2025-02-01T03:36:03.5720622Z #15 13.34    Compiling tracing v0.1.41
+2025-02-01T03:36:03.5721382Z #15 13.44    Compiling tokio v1.43.0
+2025-02-01T03:36:03.8771316Z #15 13.75    Compiling http-body v0.4.6
+2025-02-01T03:36:04.2106651Z #15 13.93    Compiling pin-project-internal v1.1.8
+2025-02-01T03:36:05.4846618Z #15 15.23    Compiling axum-core v0.3.4
+2025-02-01T03:36:05.4848980Z #15 15.36    Compiling ryu v1.0.19
+2025-02-01T03:36:05.9508328Z #15 15.62    Compiling try-lock v0.2.5
+2025-02-01T03:36:05.9509532Z #15 15.67    Compiling tower-layer v0.3.3
+2025-02-01T03:36:06.1272815Z #15 15.85    Compiling percent-encoding v2.3.1
+2025-02-01T03:36:06.1633872Z #15 16.04    Compiling serde_json v1.0.138
+2025-02-01T03:36:06.3116574Z #15 16.18    Compiling form_urlencoded v1.2.1
+2025-02-01T03:36:06.6189724Z #15 16.39    Compiling want v0.3.1
+2025-02-01T03:36:06.6190339Z #15 16.49    Compiling pin-project v1.1.8
+2025-02-01T03:36:07.0845836Z #15 16.96    Compiling async-trait v0.1.85
+2025-02-01T03:36:08.2047755Z #15 18.08    Compiling futures-channel v0.3.31
+2025-02-01T03:36:08.3793798Z #15 18.25    Compiling axum v0.6.20
+2025-02-01T03:36:08.6528012Z #15 18.37    Compiling httpdate v1.0.3
+2025-02-01T03:36:08.9725783Z #15 18.69    Compiling mime v0.3.17
+2025-02-01T03:36:09.4588823Z #15 19.18    Compiling memchr v2.7.4
+2025-02-01T03:36:16.4534585Z #15 26.33    Compiling hyper v0.14.32
+2025-02-01T03:36:18.2064692Z #15 28.08    Compiling tower v0.4.13
+2025-02-01T03:36:18.5507365Z #15 28.42    Compiling serde_urlencoded v0.7.1
+2025-02-01T03:36:18.7657548Z #15 28.64    Compiling serde_path_to_error v0.1.16
+2025-02-01T03:36:19.2030220Z #15 29.08    Compiling bitflags v1.3.2
+2025-02-01T03:36:19.3864274Z #15 29.11    Compiling matchit v0.7.3
+2025-02-01T03:36:19.8428603Z #15 29.56    Compiling sync_wrapper v0.1.2
+2025-02-01T03:36:22.8622485Z #15 32.58    Compiling my_rust_app v0.1.0 (/app)
+2025-02-01T03:36:23.6940979Z #15 33.57 warning: found module declaration for lib.rs
+2025-02-01T03:36:23.6942658Z #15 33.57  --> src/main.rs:6:1
+2025-02-01T03:36:23.6943014Z #15 33.57   |
+2025-02-01T03:36:23.6943299Z #15 33.57 6 | mod lib;
+2025-02-01T03:36:23.6943591Z #15 33.57   | ^^^^^^^^
+2025-02-01T03:36:23.6943865Z #15 33.57   |
+2025-02-01T03:36:23.6944248Z #15 33.57   = note: lib.rs is the root of this crate's library target
+2025-02-01T03:36:23.6944933Z #15 33.57   = help: to refer to it from other targets, use the library's name as the path
+2025-02-01T03:36:23.6945599Z #15 33.57   = note: `#[warn(special_module_name)]` on by default
+2025-02-01T03:36:23.6946043Z #15 33.57 
+2025-02-01T03:36:23.6946403Z #15 33.57 warning: unused import: `serde::Serialize`
+2025-02-01T03:36:23.6946868Z #15 33.57  --> src/main.rs:2:5
+2025-02-01T03:36:23.6947404Z #15 33.57   |
+2025-02-01T03:36:23.6947703Z #15 33.57 2 | use serde::Serialize;
+2025-02-01T03:36:23.6948066Z #15 33.57   |     ^^^^^^^^^^^^^^^^
+2025-02-01T03:36:23.6948688Z #15 33.57   |
+2025-02-01T03:36:23.6949057Z #15 33.57   = note: `#[warn(unused_imports)]` on by default
+2025-02-01T03:36:23.6949486Z #15 33.57 
+2025-02-01T03:36:27.6476098Z #15 37.52 warning: `my_rust_app` (bin "my_rust_app") generated 2 warnings (run `cargo fix --bin "my_rust_app"` to apply 1 suggestion)
+2025-02-01T03:36:27.6478957Z #15 37.52     Finished `release` profile [optimized] target(s) in 37.34s
+2025-02-01T03:36:27.8749895Z #15 DONE 37.7s
+2025-02-01T03:36:28.0637446Z 
+2025-02-01T03:36:28.0639208Z #16 [runtime 3/3] COPY --from=builder /app/target/release/my_rust_app /usr/local/bin/my_rust_app
+2025-02-01T03:36:28.0640763Z #16 DONE 0.0s
+2025-02-01T03:36:28.0640956Z 
+2025-02-01T03:36:28.0641086Z #17 exporting to image
+2025-02-01T03:36:28.0641431Z #17 exporting layers
+2025-02-01T03:36:28.1910240Z #17 exporting layers 0.3s done
+2025-02-01T03:36:28.2128613Z #17 writing image sha256:1421d6396ccfa395bce86904da331c08256405dc417962bc9716ccf9cb2a30b6 done
+2025-02-01T03:36:28.2129656Z #17 naming to docker.io/library/my_rust_app done
+2025-02-01T03:36:28.2130249Z #17 DONE 0.3s
+2025-02-01T03:36:28.2216579Z ##[group]Run docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
+2025-02-01T03:36:28.2217415Z [36;1mdocker run --rm -d -p 3000:3000 --name rust_container my_rust_app[0m
+2025-02-01T03:36:28.2245479Z shell: /usr/bin/bash -e {0}
+2025-02-01T03:36:28.2245710Z env:
+2025-02-01T03:36:28.2245873Z   CARGO_TERM_COLOR: always
+2025-02-01T03:36:28.2246094Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:36:28.2246320Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:36:28.2246508Z ##[endgroup]
+2025-02-01T03:36:28.2551310Z ef2ee816a0a2f7c3b0505ba359510d15e6e41c8e3f5772a40868bb45c691bf42
+2025-02-01T03:36:28.5062392Z ##[group]Run docker logs rust_container
+2025-02-01T03:36:28.5062923Z [36;1mdocker logs rust_container[0m
+2025-02-01T03:36:28.5091403Z shell: /usr/bin/bash -e {0}
+2025-02-01T03:36:28.5091628Z env:
+2025-02-01T03:36:28.5091797Z   CARGO_TERM_COLOR: always
+2025-02-01T03:36:28.5092025Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:36:28.5092439Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:36:28.5092628Z ##[endgroup]
+2025-02-01T03:36:28.5265821Z Server running on 0.0.0.0:3000
+2025-02-01T03:36:28.5311335Z ##[group]Run docker stop rust_container
+2025-02-01T03:36:28.5311639Z [36;1mdocker stop rust_container[0m
+2025-02-01T03:36:28.5337297Z shell: /usr/bin/bash -e {0}
+2025-02-01T03:36:28.5337528Z env:
+2025-02-01T03:36:28.5337704Z   CARGO_TERM_COLOR: always
+2025-02-01T03:36:28.5337927Z   CARGO_HOME: /home/runner/.cargo
+2025-02-01T03:36:28.5338163Z   CARGO_INCREMENTAL: 0
+2025-02-01T03:36:28.5338352Z ##[endgroup]
+2025-02-01T03:36:38.6664429Z rust_container
+2025-02-01T03:36:38.6779552Z Post job cleanup.
+2025-02-01T03:36:38.7726721Z [command]/usr/bin/git version
+2025-02-01T03:36:38.7769046Z git version 2.48.1
+2025-02-01T03:36:38.7815432Z Temporarily overriding HOME='/home/runner/work/_temp/3048ff15-f7c7-4fb6-9eea-8aad8c7b2216' before making global git config changes
+2025-02-01T03:36:38.7817488Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-01T03:36:38.7832256Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/prog8860-w25-cicd/prog8860-w25-cicd
+2025-02-01T03:36:38.7869748Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-01T03:36:38.7906502Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-01T03:36:38.8158529Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-01T03:36:38.8182491Z http.https://github.com/.extraheader
+2025-02-01T03:36:38.8196275Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-01T03:36:38.8231089Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-01T03:36:38.8581050Z Cleaning up orphan processesCreated user: Json(User { id: 1, name: "Alice", email: "alice@example.com" })
+Fetched user: User { id: 1, name: "Alice", email: "alice@example.com" }
