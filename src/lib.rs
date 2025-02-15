@@ -32,3 +32,7 @@ pub async fn get_user(user_id: web::Path<u32>, state: web::Data<AppState>) -> im
 
     HttpResponse::NotFound().json(json!({ "error": "User not found" }))  // ✅ Return proper error response
 }
+
+pub async fn health_check() -> impl Responder {  // ✅ Correct return type
+    HttpResponse::Ok().body("OK")
+}
