@@ -1,17 +1,20 @@
-# Use Rust base image
-FROM rust:latest
+# Step 1: Build the Rust application
+FROM rust:latest AS builder
+WORKDIR /app
 
-# Set the working directory
-WORKDIR /usr/src/myrustapp
+# Copy only necessary files first (better caching)
+COPY Cargo.toml Cargo.lock ./
+RUN cargo fetch
 
-# Copy the source code
+# Copy the rest of the source code
 COPY . .
 
-# Build the application
-RUN cargo build --release
+# Ensure clean build
+RUN cargo clean && cargo build --release
 
-# Expose port 3000
-EXPOSE 3000
-
-# Run the application
-CMD ["./target/release/myrustapp"]
+# Step 2: Create a smaller final image
+FROM debian:latest
+WORKDIR /app
+COPY --from=builder /app/target/release/my_rust_app .
+RUN chmod +x my_rust_app
+CMD ["./my_rust_app"]
