@@ -32,6 +32,9 @@ jobs:
     - name: Run Docker Container
       run: docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
 
+    - name: Check if Container is Running
+      run: docker ps
+
     - name: Wait for Application to Start
       run: |
         for i in {1..20}; do
