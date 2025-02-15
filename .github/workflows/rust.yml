@@ -1,52 +1,52 @@
-name: Rust with Docker
+name: Rust CI with MySQL
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
-
-env:
-  CARGO_TERM_COLOR: always
+    branches:
+      - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: rust_db
+          MYSQL_USER: rust_user
+          MYSQL_PASSWORD: rust_password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Install Rust
-      uses: dtolnay/rust-toolchain@stable
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
 
-    - name: Build Rust Application
-      run: cargo build --release
+      - name: Install MySQL Client
+        run: sudo apt-get install -y mysql-client
 
-    # - name: Run Rust Tests
-    #   run: cargo test --verbose
+      - name: Wait for MySQL
+        run: |
+          until mysqladmin ping -h127.0.0.1 --silent; do
+            echo "Waiting for MySQL..."
+            sleep 2
+          done
 
-    - name: Build Docker Image
-      run: docker build -t my_rust_app .
+      - name: Run migrations
+        run: mysql -h 127.0.0.1 -u rust_user -prust_password rust_db < init.sql
 
-    - name: Run Docker Container
-      run: docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
-
-    - name: Check if Container is Running
-      run: docker ps -a
-      
-    - name: Wait for MySQL to Be Ready
-      run: |
-        until docker exec rust_db mysqladmin ping -h"localhost" --silent; do
-          echo "Waiting for MySQL..."
-          sleep 5
-        done
-
-    - name: Test API Endpoints
-      run: |
-        sleep 20  # Wait for the server to start
-        curl -X POST "http://localhost:3000/user" -H "Content-Type: application/json" -d '{"id":1, "firstname":"Alice", "lastanme":"Lee"}'
-        curl -X GET "http://localhost:3000/user/1"
-
-    - name: Stop Container
-      run: docker stop rust_container
+      - name: Run Rust Tests
+        run: cargo test
