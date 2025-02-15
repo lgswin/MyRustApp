@@ -16,7 +16,7 @@ async fn main() -> std::io::Result<()> {
             .route("/user", web::post().to(create_user))
             .route("/user/{id}", web::get().to(get_user))
     })
-    .bind("127.0.0.1:3000")?
+    .bind("0.0.0.0:3000")?
     .run()
     .await
 }
