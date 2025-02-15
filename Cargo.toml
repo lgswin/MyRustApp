@@ -12,10 +12,13 @@ path = "src/main.rs"
 actix-web = "4"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+sqlx = { version = "0.8.3", features = ["mysql", "runtime-tokio", "macros"] }
+tokio = { version = "1", features = ["full"] }
+dotenv = "0.15"
 
 [dev-dependencies]  # Add these for testing
 tokio = { version = "1", features = ["full"] }
-tower = { version = "0.4", features = ["util"] } # Enables `ServiceExt`
-axum = "0.6" # Use the correct Axum version for compatibility
-hyper = "0.14" # Required for testing with HTTP requests
+tower = { version = "0.5.2", features = ["util"] } # Enables `ServiceExt`
+axum = "0.8.1" # Use the correct Axum version for compatibility
+hyper = "1.6.0" # Required for testing with HTTP requests
 actix-rt = "2"

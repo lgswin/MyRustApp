@@ -37,8 +37,8 @@ jobs:
 
     - name: Test API Endpoints
       run: |
-        sleep 20  # Wait for the server to start
-        curl -X POST "http://localhost:3000/user" -H "Content-Type: application/json" -d '{"id":1, "name":"Alice", "email":"alice@example.com"}'
+        sleep 10  # Wait for the server to start
+        curl -X POST "http://localhost:3000/user" -H "Content-Type: application/json" -d '{"id":1, "firstname":"Alice", "lastanme":"Lee"}'
         curl -X GET "http://localhost:3000/user/1"
 
     - name: Stop Container

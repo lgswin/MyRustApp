@@ -5,10 +5,20 @@ mod tests {
     use my_rust_app::{create_user, get_user, AppState, User};  // Use `my_rust_app` instead of `crate::`
     use std::sync::Mutex;
     use std::collections::HashMap;
+    use sqlx::{MySqlPool, Pool, MySql};
+    
+
+    // ✅ Function to create a test database connection
+    async fn get_test_pool() -> MySqlPool {
+        let database_url = "mysql://rust_user:rust_password@localhost:3306/rust_db"; // Change to a test DB
+        MySqlPool::connect(database_url).await.expect("Failed to connect to test database")
+    }
 
     #[actix_rt::test]
     async fn test_create_user() {
+        let pool = get_test_pool().await;  // ✅ Initialize database pool
         let state = web::Data::new(AppState {
+            pool,
             users: Mutex::new(HashMap::new()),
         });
 
@@ -21,7 +31,7 @@ mod tests {
 
         let req = test::TestRequest::post()
             .uri("/user")
-            .set_json(&json!({ "id": 1, "name": "Alice", "email": "alice@example.com" }))
+            .set_json(&json!({ "id": 1, "firstname": "Alice", "lastname": "Lee" }))
             .to_request();
 
         let resp = test::call_service(&app, req).await;
@@ -30,7 +40,9 @@ mod tests {
 
     #[actix_rt::test]
     async fn test_get_user() {
+        let pool = get_test_pool().await;  // ✅ Initialize database pool
         let state = web::Data::new(AppState {
+            pool,
             users: Mutex::new(HashMap::new()),
         });
 
@@ -38,8 +50,8 @@ mod tests {
             1,
             User {
                 id: 1,
-                name: "Alice".to_string(),
-                email: "alice@example.com".to_string(),
+                firstname: "Alice".to_string(),
+                lastname: "Lee".to_string(),
             },
         );
 

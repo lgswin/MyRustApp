@@ -3,15 +3,17 @@ use serde_json::json;
 use serde::{Deserialize, Serialize};
 use std::sync::Mutex;
 use std::collections::HashMap;
+use sqlx::MySqlPool;
 
 #[derive(Serialize, Deserialize)]
 pub struct User {
     pub id: u32,
-    pub name: String,
-    pub email: String,
+    pub firstname: String,
+    pub lastname: String,
 }
 
 pub struct AppState {
+    pub pool: MySqlPool,
     pub users: Mutex<HashMap<u32, User>>,
 }
 

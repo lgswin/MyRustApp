@@ -1,20 +1,23 @@
-# Step 1: Build the Rust application
+# Use Rust official image
 FROM rust:latest AS builder
+
 WORKDIR /app
 
-# Copy only necessary files first (better caching)
 COPY Cargo.toml Cargo.lock ./
-RUN cargo fetch
+RUN mkdir src && echo "fn main() {}" > src/main.rs
+RUN cargo build --release || true
 
-# Copy the rest of the source code
 COPY . .
+RUN cargo build --release
 
-# Ensure clean build
-RUN cargo clean && cargo build --release
+# Use Ubuntu 22.04 for GLIBC 2.35+
+FROM ubuntu:22.04
 
-# Step 2: Create a smaller final image
-FROM debian:latest
 WORKDIR /app
-COPY --from=builder /app/target/release/my_rust_app .
-RUN chmod +x my_rust_app
+RUN apt-get update && apt-get install -y libgcc1 libc6  # Ensure GLIBC dependencies are installed
+
+COPY --from=builder /app/target/release/my_rust_app /app/my_rust_app
+
+EXPOSE 3000
+
 CMD ["./my_rust_app"]
