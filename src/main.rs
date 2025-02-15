@@ -9,6 +9,7 @@ async fn main() -> std::io::Result<()> {
     dotenv().ok(); // Load environment variables from .env file
 
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    println!("Connecting to database at: {}", database_url);
     let pool = MySqlPool::connect(&database_url).await.expect("Failed to connect to MySQL");
 
     let state = web::Data::new(AppState { 

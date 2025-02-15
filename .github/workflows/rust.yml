@@ -33,7 +33,14 @@ jobs:
       run: docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
 
     - name: Check if Container is Running
-      run: docker ps
+      run: docker ps -a
+      
+    - name: Wait for MySQL to Be Ready
+      run: |
+        until docker exec rust_db mysqladmin ping -h"localhost" --silent; do
+          echo "Waiting for MySQL..."
+          sleep 5
+        done
 
     - name: Test API Endpoints
       run: |
