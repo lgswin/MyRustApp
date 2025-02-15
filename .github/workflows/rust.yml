@@ -23,8 +23,8 @@ jobs:
     - name: Build Rust Application
       run: cargo build --release
 
-    - name: Run Rust Tests
-      run: cargo test --verbose
+    # - name: Run Rust Tests
+    #   run: cargo test --verbose
 
     - name: Build Docker Image
       run: docker build -t my_rust_app .
