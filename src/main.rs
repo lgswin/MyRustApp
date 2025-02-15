@@ -3,10 +3,26 @@ use my_rust_app::{health_check, create_user, get_user, AppState};  // Import fro
 use sqlx::{MySql, MySqlPool};
 use std::{collections::HashMap, env, sync::Mutex};
 use dotenv::dotenv;
+use simplelog::*;
+use std::fs::File;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok(); // Load environment variables from .env file
+
+    // Create the log directory if it doesn't exist
+    std::fs::create_dir_all("/var/log/myapp").expect("Failed to create log directory");
+
+    // Create a log file where log messages will be written
+    let log_file = File::create("/var/log/myapp/application.log").unwrap();
+
+    // Initialize the logger to write logs at the Info level (and above) to the file
+    CombinedLogger::init(vec![
+        WriteLogger::new(LevelFilter::Info, Config::default(), log_file),
+    ]).unwrap();
+
+    // Log an informational message indicating that the application has started
+    log::info!("Application started");
 
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     println!("Connecting to database at: {}", database_url);

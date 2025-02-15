@@ -15,6 +15,8 @@ serde_json = "1.0"
 sqlx = { version = "0.8.3", features = ["mysql", "runtime-tokio", "macros"] }
 tokio = { version = "1", features = ["full"] }
 dotenv = "0.15"
+simplelog = "0.12.2" 
+log = "0.4"
 
 [dev-dependencies]  # Add these for testing
 tokio = { version = "1", features = ["full"] }

@@ -32,6 +32,8 @@ services:
       DATABASE_URL: mysql://rust_user:rust_password@mysql:3306/rust_db
     ports:
       - "3000:3000"
+    volumes:
+      - ./logs:/var/log/myapp  # Bind mount: container /var/log/myapp -> local machine ./logs
     networks:
       - rust_network
 
