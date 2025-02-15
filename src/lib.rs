@@ -1,27 +1,34 @@
-use serde::Serialize;
+use actix_web::{web, HttpResponse, Responder};  // Import HttpResponse
+use serde_json::json;
+use serde::{Deserialize, Serialize};
+use std::sync::Mutex;
+use std::collections::HashMap;
 
-/// `Greeting` 구조체 정의
-#[derive(Serialize, Debug, PartialEq)]
-pub struct Greeting {
-    pub message: String,
+#[derive(Serialize, Deserialize)]
+pub struct User {
+    pub id: u32,
+    pub name: String,
+    pub email: String,
 }
 
-/// `greet` 함수는 주어진 이름을 받아 "Hello, {이름}!" 형태의 메시지를 반환합니다.
-///
-/// # 예제
-///
-/// ```
-/// use my_rust_app::{greet, Greeting};
-///
-/// let result = greet("Alice");
-/// assert_eq!(result, Greeting { message: String::from("Hello, Alice!") });  // 수정된 부분
-/// ```
-pub fn greet(name: &str) -> Greeting {
-    Greeting {
-        message: format!("Hello, {}!", name),
+pub struct AppState {
+    pub users: Mutex<HashMap<u32, User>>,
+}
+
+// API handlers
+pub async fn create_user(data: web::Json<User>, state: web::Data<AppState>) -> impl Responder {
+    let mut users = state.users.lock().unwrap();
+    users.insert(data.id, data.into_inner());
+
+    HttpResponse::Created().json(json!({ "message": "User created" }))  // ✅ 201 Created 반환
+}
+
+pub async fn get_user(user_id: web::Path<u32>, state: web::Data<AppState>) -> impl Responder {
+    let users = state.users.lock().unwrap();
+    
+    if let Some(user) = users.get(&user_id) {
+        return HttpResponse::Ok().json(user);  // ✅ Return JSON response
     }
-}
 
-pub async fn root_handler() -> &'static str {
-    "Hello, Rust."
+    HttpResponse::NotFound().json(json!({ "error": "User not found" }))  // ✅ Return proper error response
 }

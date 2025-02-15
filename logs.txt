@@ -1073,3 +1073,5 @@
 2025-02-01T03:36:38.8231089Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
 2025-02-01T03:36:38.8581050Z Cleaning up orphan processesCreated user: Json(User { id: 1, name: "Alice", email: "alice@example.com" })
 Fetched user: User { id: 1, name: "Alice", email: "alice@example.com" }
+Created user: Json(User { id: 1, name: "Alice", email: "alice@example.com" })
+Fetched user: User { id: 1, name: "Alice", email: "alice@example.com" }

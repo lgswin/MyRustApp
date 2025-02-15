@@ -2,7 +2,7 @@
 mod tests {
     use actix_web::{test, App, web, http::StatusCode};
     use serde_json::json;
-    use crate::{create_user, get_user, AppState, User};
+    use my_rust_app::{create_user, get_user, AppState, User};  // Use `my_rust_app` instead of `crate::`
     use std::sync::Mutex;
     use std::collections::HashMap;
 
@@ -34,7 +34,6 @@ mod tests {
             users: Mutex::new(HashMap::new()),
         });
 
-        // Insert test user
         state.users.lock().unwrap().insert(
             1,
             User {
