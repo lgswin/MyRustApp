@@ -2,3 +2,13 @@
 03:25:34 [INFO] starting 8 workers
 03:25:34 [INFO] Actix runtime found; starting in Actix runtime
 03:25:34 [INFO] starting service: "actix-web-service-0.0.0.0:3000", workers: 8, listening on: 0.0.0.0:3000
+04:34:38 [INFO] SIGTERM received; starting graceful shutdown
+04:34:38 [INFO] accept thread stopped
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker
+04:34:38 [INFO] shutting down idle worker

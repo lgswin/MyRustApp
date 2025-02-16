@@ -1,94 +1,180 @@
-# MyRustApp
+## Assignemtn2 with My Rust app
 
-## Overview
-MyRustApp is a simple Rust-based web application that demonstrates a CI/CD pipeline for automated testing and deployment.
+### 1. **Web Application (API Server)**
 
-## How to Run
-   
-   `cargo run`
-   
-   - Default route (/):
+- Exposes two API endpoints:
+    - **POST `/user`**: Creates a new user.
+    - **GET `/user/{id}`**: Fetches user details by ID.
+- Written in **Rust** using the **Actix Web** framework.
+- Logs all requests and responses to a local file inside the container.
 
-     Open http://localhost:3000/  > Hello, Rust.
-	
-   - Greeting route (/greet/:name):
-
-     Open http://localhost:3000/greet/Alice
-
-     Expected JSON response: > { "message": "Hello, Alice!" }
-
-## Unit tests
-   
-   `cargo test`
-
-## Technology Used
-The following technologies are used in this project:
-
-- **Rust**: The primary programming language.
-- **Cargo**: Rust’s package manager and build system.
-- **Actix Web**: Web framework for building the HTTP server.
-- **GitHub Actions**: Used for Continuous Integration (CI) and automated testing.
-- **Docker**: Containerization for deployment.
-
----
-
-## Steps Followed to Implement the Pipeline
-
-### 1. **Project Setup**
-- Initialize a new Rust project using `cargo init`.
-- Implement a simple Actix Web application.
-- Create unit tests for the application.
-
-### 2. **Version Control**
-- Set up a GitHub repository for the project.
-- Add a `.gitignore` file to exclude unnecessary files.
-
-### 3. **CI/CD Pipeline Implementation**
-- Configure **GitHub Actions** to automate testing and deployment.
-- Write a **Dockerfile** to containerize the application.
-- Define a **CI workflow** in `.github/workflows/rust.yml`.
-
----
-
-## How Each CI Stage is Implemented
-
-- Ensures that the Rust application compiles correctly by cargo build and cargo test.
-- Uses GitHub Actions to install dependencies and build the application.
-- The workflow steps are identical to those defined in rust.yml.
-
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-
-    # Install Rust (if not available)
-    - name: Install Rust
-      uses: dtolnay/rust-toolchain@stable
-
-    # Run Cargo Build & Test before Dockerizing
-    - name: Build Rust Application
-      run: cargo build --verbose
-
-    - name: Run Rust Tests
-      run: cargo test --verbose
-
-    # Build Docker Image
-    - name: Build Docker Image
-      run: docker build -t my_rust_app .
-
-    # Run Container to Verify It Works
-    - name: Run Docker Container
-      run: docker run --rm -d -p 3000:3000 --name rust_container my_rust_app
-
-    # Check if the container is running properly
-    - name: Check Running Container Logs
-      run: docker logs rust_container
-
-    # Stop the container
-    - name: Stop Container
-      run: docker stop rust_container
+- `/src/main.rc` has `/user` as post, `user/{id}` as get. their functions are connected to methods in `/src/lib.rc`
+  
+```rust
+HttpServer::new(move || {
+    App::new()
+        .app_data(state.clone())
+        .route("/health", web::get().to(health_check))
+        .route("/user", web::post().to(create_user))
+        .route("/user/{id}", web::get().to(get_user))
+})
+.bind("0.0.0.0:80")?
+.run()
+.await
 ```
+
+- The application's logging initialized in `main.rc` as follows
+  
+```rust
+// Create a log file where log messages will be written
+let log_file = File::create("/var/log/myapp/application.log").unwrap();
+
+// Initialize the logger to write logs at the Info level (and above) to the file
+CombinedLogger::init(vec![
+    WriteLogger::new(LevelFilter::Info, Config::default(), log_file),
+]).unwrap();
+```
+
+- I created a Dockerfile to containerize my Rust application.
+
+```yml
+# Use Rust official image
+FROM rust:latest AS builder
+
+WORKDIR /app
+
+COPY Cargo.toml Cargo.lock ./
+RUN mkdir src && echo "fn main() {}" > src/main.rs
+RUN cargo build --release || true
+
+COPY . .
+RUN cargo build --release
+
+# Use Ubuntu 22.04 for GLIBC 2.35+
+FROM ubuntu:22.04
+
+WORKDIR /app
+RUN apt-get update && apt-get install -y libgcc1 libc6  # Ensure GLIBC dependencies are installed
+
+COPY --from=builder /app/target/release/my_rust_app /app/my_rust_app
+
+EXPOSE 3000
+
+CMD ["./my_rust_app"]
+```
+- This sets up a Docker-based environment for building and running the Rust application.
+
+### 2. **Database Container**
+
+- `MySql server` is set up, which initializes the user table confitured in `docker-compose.yml`
+- This creates a MySQL container.
+  
+```yml
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: rust_db
+      MYSQL_USER: rust_user
+      MYSQL_PASSWORD: rust_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # inital sql script
+      - mysql_data:/var/lib/mysql  # keep MySQL data when it is restarted.
+```
+
+- The database tables contain `ID` and `First/Last name fields` as defined in `init.sql`
+```sql
+CREATE DATABASE IF NOT EXISTS rust_db;
+USE rust_db;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL
+);
+
+-- Insert a default user if the table is empty
+INSERT INTO users (first_name, last_name)
+SELECT 'John', 'Doe' FROM DUAL
+WHERE NOT EXISTS (SELECT 1 FROM users LIMIT 1);
+```
+
+### 3. **Volumes and Bind Mounts**
+
+- To ensure data persists between container resarts, `docker volumes` is used in `docker-compose.yml`
+```yml
+services:
+  mysql:
+    ...
+    volumes:
+      - mysql_data:/var/lib/mysql  # keep MySQL data when it is restarted.
+```
+
+- To save the application’s log file on your local machine, the log folder in the rust_app container is bind-mounted to a folder on your host
+
+```yml
+  rust_app:
+    ...
+    volumes:
+      - ./logs:/var/log/myapp
+```
+- This setup allows you to check the application.log file both in the `./logs` folder on your local machine and in the `/var/log/myapp` folder inside the rust_app container.
+
+
+### 4. **Networking**
+
+- Two containers are created—one for the `MySQL server` and one for the rust_app (the application backend). Both containers can communicate using the `MySQL credentials` defined in the `.env` file.
+
+- **.env**
+```script
+DATABASE_URL=mysql://rust_user:rust_password@mysql:3306/rust_db
+```  
+
+- In `main.rs`, the connection to the MySQL server is established using the environment variable
+
+```rust
+let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+println!("Connecting to database at: {}", database_url);
+let pool = MySqlPool::connect(&database_url).await.expect("Failed to connect to MySQL");
+```
+
+### 5. **Scaling and Load Balancing**
+
+- The application is made scalable by creating replicas in `docker-compose.yml`
+
+```yml
+rust_app:
+    build: .
+    deploy:
+      replicas: 3 
+      restart_policy:
+        condition: on-failure
+      mode: replicated  
+      endpoint_mode: dnsrr  # load balancing policy
+```
+
+- An `Nginx` server is also implemented as a `reverse proxy` to handle `load balancing`
+
+```yml
+nginx:
+  image: nginx:latest
+  container_name: nginx_lb
+  restart: always
+  depends_on:
+    - rust_app
+  ports:
+    - "80:80"
+  volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Nginx setting file mount
+  networks:
+    - rust_network
+```
+
+### 6. **Security Best Practices**
+
+- For security best practices, credentials and security keys are stored in a `.env` file.
