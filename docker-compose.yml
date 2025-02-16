@@ -13,30 +13,52 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Load the SQL script
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # 초기화 SQL 스크립트
+      - mysql_data:/var/lib/mysql  # MySQL 데이터 유지
     networks:
       - rust_network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
       interval: 10s
       retries: 5
       start_period: 20s
+      timeout: 5s
 
   rust_app:
     build: .
-    container_name: rust_container
+    deploy:
+      replicas: 3  # 컨테이너를 3개로 스케일링
+      restart_policy:
+        condition: on-failure
+      mode: replicated  # 여러 개 복제 실행
+      endpoint_mode: dnsrr  # 로드 밸런싱 방식
+    ports:
+      - "3000-3002:80" 
     depends_on:
-      mysql:
-        condition: service_healthy
+      - mysql
     environment:
       DATABASE_URL: mysql://rust_user:rust_password@mysql:3306/rust_db
-    ports:
-      - "3000:3000"
     volumes:
-      - ./logs:/var/log/myapp  # Bind mount: container /var/log/myapp -> local machine ./logs
+      - ./logs:/var/log/myapp  # 로그 저장
+    networks:
+      - rust_network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_lb
+    restart: always
+    depends_on:
+      - rust_app
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Nginx 설정 파일 마운트
     networks:
       - rust_network
 
 networks:
   rust_network:
     driver: bridge
+
+volumes:
+  mysql_data:  # MySQL 데이터 유지

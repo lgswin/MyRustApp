@@ -1,6 +1,6 @@
 use actix_web::{web, App, HttpServer};
 use my_rust_app::{health_check, create_user, get_user, AppState};  // Import from lib.rs
-use sqlx::{MySql, MySqlPool};
+use sqlx::MySqlPool;
 use std::{collections::HashMap, env, sync::Mutex};
 use dotenv::dotenv;
 use simplelog::*;
@@ -30,7 +30,7 @@ async fn main() -> std::io::Result<()> {
 
     let state = web::Data::new(AppState { 
         pool,
-        users: Mutex::new(HashMap::new()),  // ✅ Initialize users field
+        users: Mutex::new(HashMap::new()),  // Initialize users field
     });
 
     HttpServer::new(move || {
@@ -40,7 +40,7 @@ async fn main() -> std::io::Result<()> {
             .route("/user", web::post().to(create_user))
             .route("/user/{id}", web::get().to(get_user))
     })
-    .bind("0.0.0.0:3000")?
+    .bind("0.0.0.0:80")?
     .run()
     .await
 }

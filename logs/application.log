@@ -1,4 +1,4 @@
-22:46:44 [INFO] Application started
-22:46:44 [INFO] starting 8 workers
-22:46:44 [INFO] Actix runtime found; starting in Actix runtime
-22:46:44 [INFO] starting service: "actix-web-service-0.0.0.0:3000", workers: 8, listening on: 0.0.0.0:3000
+03:25:33 [INFO] Application started
+03:25:34 [INFO] starting 8 workers
+03:25:34 [INFO] Actix runtime found; starting in Actix runtime
+03:25:34 [INFO] starting service: "actix-web-service-0.0.0.0:3000", workers: 8, listening on: 0.0.0.0:3000

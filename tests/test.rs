@@ -5,7 +5,7 @@ mod tests {
     use my_rust_app::{create_user, get_user, AppState, User};  // Use `my_rust_app` instead of `crate::`
     use std::sync::Mutex;
     use std::collections::HashMap;
-    use sqlx::{MySqlPool, Pool, MySql};
+    use sqlx::MySqlPool;
     
 
     // ✅ Function to create a test database connection
@@ -40,7 +40,7 @@ mod tests {
 
     #[actix_rt::test]
     async fn test_get_user() {
-        let pool = get_test_pool().await;  // ✅ Initialize database pool
+        let pool = get_test_pool().await;  // Initialize database pool
         let state = web::Data::new(AppState {
             pool,
             users: Mutex::new(HashMap::new()),

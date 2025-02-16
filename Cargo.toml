@@ -17,10 +17,10 @@ tokio = { version = "1", features = ["full"] }
 dotenv = "0.15"
 simplelog = "0.12.2" 
 log = "0.4"
+hostname = "0.4.0"
 
 [dev-dependencies]  # Add these for testing
 tokio = { version = "1", features = ["full"] }
 tower = { version = "0.5.2", features = ["util"] } # Enables `ServiceExt`
-axum = "0.8.1" # Use the correct Axum version for compatibility
 hyper = "1.6.0" # Required for testing with HTTP requests
 actix-rt = "2"
