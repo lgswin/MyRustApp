@@ -5,6 +5,8 @@ use std::sync::Mutex;
 use std::collections::HashMap;
 use sqlx::MySqlPool;
 
+pub mod models;
+
 #[derive(Serialize, Deserialize)]
 pub struct User {
     pub id: u32,

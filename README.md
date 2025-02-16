@@ -64,6 +64,23 @@ CMD ["./my_rust_app"]
 ```
 - This sets up a Docker-based environment for building and running the Rust application.
 
+- Additionally, I added '/' to show an index page and it loads index.html from /templates foler.
+
+- Related codes are follows
+
+```rust
+async fn index() -> impl Responder {
+    let path = Path::new("templates/index.html");
+    if path.exists() {
+        HttpResponse::Ok()
+            .content_type("text/html; charset=utf-8")
+            .body(std::fs::read_to_string(path).unwrap_or_else(|_| "<h1>Error: Could not load file</h1>".to_string()))
+    } else {
+        HttpResponse::InternalServerError().body("<h1>File not found in container--</h1>")
+    }
+}
+```
+
 ### 2. **Database Container**
 
 - `MySql server` is set up, which initializes the user table confitured in `docker-compose.yml`
@@ -128,7 +145,8 @@ services:
 
 ### 4. **Networking**
 
-- Two containers are created—one for the `MySQL server` and one for the rust_app (the application backend). Both containers can communicate using the `MySQL credentials` defined in the `.env` file.
+- Two containers are created—one for the `MySQL server` and one for the rust_app (the application backend). 
+- Both containers can communicate using the `MySQL credentials` defined in the `.env` file.
 
 - **.env**
 ```script
@@ -178,3 +196,29 @@ nginx:
 ### 6. **Security Best Practices**
 
 - For security best practices, credentials and security keys are stored in a `.env` file.
+- User Authentication (MYSQL_USER and MYSQL_PASSWORD)
+	*	Authentication is enabled with MYSQL_USER=rust_user and MYSQL_PASSWORD=rust_password.
+	*	The root account (root) is protected with MYSQL_ROOT_PASSWORD=root_password.
+	*	Anonymous users are not allowed by default.
+- Password Authentication Applied
+	*	Passwordless access is not allowed as MYSQL_USER and MYSQL_ROOT_PASSWORD are set.
+	*	Authentication is enforced using either mysql_native_password or caching_sha2_password.
+
+
+### 7. How to run 
+
+- `docker compose up -d` (to create containers and run them)
+- `docker ps` (to confirm containers running)
+```
+CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS                   PORTS                                     NAMES
+a6aca62096a1   nginx:latest         "/docker-entrypoint.…"   4 minutes ago    Up 4 minutes             0.0.0.0:80->80/tcp                        nginx_lb
+33ee43352f56   myrustapp-rust_app   "./my_rust_app"          4 minutes ago    Up 4 minutes             3000/tcp, 0.0.0.0:3000->80/tcp            myrustapp-rust_app-1
+8229a5eac715   myrustapp-rust_app   "./my_rust_app"          4 minutes ago    Up 4 minutes             3000/tcp, 0.0.0.0:3001->80/tcp            myrustapp-rust_app-2
+fe774e44f9e3   myrustapp-rust_app   "./my_rust_app"          4 minutes ago    Up 4 minutes             3000/tcp, 0.0.0.0:3002->80/tcp            myrustapp-rust_app-3
+057c423d90a5   mysql:8.0            "docker-entrypoint.s…"   4 minutes ago    Up 4 minutes (healthy)   0.0.0.0:3306->3306/tcp, 33060/tcp         mysql_container
+```
+- cargo test (to test funtionality of apis)
+- open `localhost:3000` in a browser
+- It shows `index.html` from myrustapp-rust_app container
+
+
