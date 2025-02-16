@@ -6,8 +6,17 @@ use dotenv::dotenv;
 use simplelog::*;
 use std::fs::File;
 
+use std::path::Path;
+
 async fn index() -> impl Responder {
-    HttpResponse::Ok().body("<h1>Welcome to My Rust App</h1><p>This is the home page.</p>")
+    let path = Path::new("templates/index.html");
+    if path.exists() {
+        HttpResponse::Ok()
+            .content_type("text/html; charset=utf-8")
+            .body(std::fs::read_to_string(path).unwrap_or_else(|_| "<h1>Error: Could not load file</h1>".to_string()))
+    } else {
+        HttpResponse::InternalServerError().body("<h1>File not found in container--</h1>")
+    }
 }
 
 #[actix_web::main]
