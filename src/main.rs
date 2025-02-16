@@ -1,10 +1,14 @@
-use actix_web::{web, App, HttpServer};
+use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 use my_rust_app::{health_check, create_user, get_user, AppState};  // Import from lib.rs
 use sqlx::MySqlPool;
 use std::{collections::HashMap, env, sync::Mutex};
 use dotenv::dotenv;
 use simplelog::*;
 use std::fs::File;
+
+async fn index() -> impl Responder {
+    HttpResponse::Ok().body("<h1>Welcome to My Rust App</h1><p>This is the home page.</p>")
+}
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -36,6 +40,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(state.clone())
+            .route("/", web::get().to(index))  // ✅ 루트 경로 추가
             .route("/health", web::get().to(health_check))
             .route("/user", web::post().to(create_user))
             .route("/user/{id}", web::get().to(get_user))
