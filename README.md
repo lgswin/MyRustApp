@@ -38,7 +38,6 @@ CombinedLogger::init(vec![
 - I created a Dockerfile to containerize my Rust application.
 
 ```yml
-# Use Rust official image
 FROM rust:latest AS builder
 
 WORKDIR /app
@@ -46,17 +45,17 @@ WORKDIR /app
 COPY Cargo.toml Cargo.lock ./
 RUN mkdir src && echo "fn main() {}" > src/main.rs
 RUN cargo build --release || true
-
 COPY . .
 RUN cargo build --release
+COPY templates/ /app/templates/
 
-# Use Ubuntu 22.04 for GLIBC 2.35+
 FROM ubuntu:22.04
-
 WORKDIR /app
-RUN apt-get update && apt-get install -y libgcc1 libc6  # Ensure GLIBC dependencies are installed
+
+RUN apt-get update && apt-get install -y libgcc1 libc6
 
 COPY --from=builder /app/target/release/my_rust_app /app/my_rust_app
+COPY --from=builder /app/templates /app/templates
 
 EXPOSE 3000
 
@@ -218,7 +217,8 @@ fe774e44f9e3   myrustapp-rust_app   "./my_rust_app"          4 minutes ago    Up
 057c423d90a5   mysql:8.0            "docker-entrypoint.s…"   4 minutes ago    Up 4 minutes (healthy)   0.0.0.0:3306->3306/tcp, 33060/tcp         mysql_container
 ```
 - cargo test (to test funtionality of apis)
-- open `localhost:3000` in a browser
+  * this test will add `{ "id": 1, "firstname": "Alice", "lastname": "Lee" }` and check if it finds in the database successfully
+- Open `localhost:3000` in a browser
 - It shows `index.html` from myrustapp-rust_app container
 
 

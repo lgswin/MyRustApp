@@ -1,4 +1,15 @@
-23:17:33 [INFO] Application started
-23:17:34 [INFO] starting 8 workers
-23:17:34 [INFO] Actix runtime found; starting in Actix runtime
-23:17:34 [INFO] starting service: "actix-web-service-0.0.0.0:80", workers: 8, listening on: 0.0.0.0:80
+04:06:20 [INFO] Application started
+04:06:22 [WARN] acquired connection, but time to acquire exceeded slow threshold aquired_after_secs=2.660028127 slow_acquire_threshold_secs=2.0
+04:06:22 [INFO] starting 8 workers
+04:06:22 [INFO] Actix runtime found; starting in Actix runtime
+04:06:22 [INFO] starting service: "actix-web-service-0.0.0.0:80", workers: 8, listening on: 0.0.0.0:80
+04:09:57 [INFO] SIGTERM received; starting graceful shutdown
+04:09:57 [INFO] accept thread stopped
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
+04:09:57 [INFO] shutting down idle worker
